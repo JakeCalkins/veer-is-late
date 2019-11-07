@@ -20,4 +20,4 @@ I got to study abroad in Ireland, which was absolutely grand. I'd recommend it t
 My favorite places to eat near Amherst are Bubs BBQ.
 
 # Things I do not like
-Everclear Pool Leisure @ *700 Boston Rd, Billerica*
+Everclear Pool & Leisure @ *700 Boston Rd, Billerica*
