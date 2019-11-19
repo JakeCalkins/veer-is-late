@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+# Jake's Sketch Files
+*.sketch
+sketch_files/
