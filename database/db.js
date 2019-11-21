@@ -7,20 +7,22 @@ const Client = require('pg').Client
  * @param {*} values   Values to place into the SQL query
  * @param {*} callback Callback function to push error/result to
  */
-function executeQuery(query, values, callback) {
+async function executeQuery(query, values, callback) {
     const client = new Client("postgres://oohprrpx:VCPIDRy5mbc2oRw7fiPqVEwDgs5GfW8R@salt.db.elephantsql.com:5432/oohprrpx");
     client.connect(function(err) {
         if (err) {
+            console.log(err)
             return callback(err, null);
         }
     });
-    client.query(query, values)
+    await client.query(query, values)
         .then(res => {
             client.end();
             return callback(null, res);
         })
         .catch(err => {
             client.end();
+            console.log(err)
             return callback(err, null);
         });
 }
