@@ -1,0 +1,11 @@
+Each of the classes has a unique id. Contained in that in json format is the following in order
+
+"Subj Abbr",
+"Course #",
+"Sect #",
+"Type",
+"Course Title",
+"Instructor(s)",
+"Meeting Times"
+
+There also may be a course description, gened, course requirements. But these are not guaranteed, some don't even have a description. 
