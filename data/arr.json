@@ -31,7 +31,15 @@
             },
             {
                 "cnum": 311,
+                "is_satisfied": true
+            },
+            {
+                "cnum": 326,
                 "is_satisfied": false
+            },
+            {
+                "cnum": 377,
+                "is_satisfied": true
             }
         ],
         "400_level_electives": [
