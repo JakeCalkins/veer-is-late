@@ -1,3 +1,9 @@
+## This directory
+
+Created with create-react-app, holds all the frontend code for the web app and some of the internals.
+
+--
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
