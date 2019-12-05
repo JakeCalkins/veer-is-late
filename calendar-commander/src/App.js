@@ -1,15 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import submit_button from "./submit_triangle.png";
 
 function App() {
   return (
     <div className="App">
+      <h2>Enter your Student ID</h2>
       <form action="/requirements-aquisiton.html">
-        <h2>Enter your Student ID</h2>
-        <input type="text" name="SID" placeholder="12345678" />
-        <img src="calendar-commander/src/submit_triangle.png" />
-        <button type="submit"></button>
+        <input type="text" name="SID" placeholder="8 digits" pattern=".{8, 8}" maxlength="8"/>
+        <button type="submit"><img src={submit_button} /></button>
       </form>
     </div>
   );

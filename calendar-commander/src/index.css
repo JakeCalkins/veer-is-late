@@ -1,23 +1,32 @@
 body {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h2 {
   font-size: 2em;
 }
 
-input {
-  height: 56px;
-  width: 360px;
+form {
+  display:flex;
+  flex-direction:row;
   border: 2px solid black;
   border-radius: 12px;
-  font-size: 24px;
   padding-left:10px;
+  font-size: 24px;
+  width: 400px;
+}
+
+input {
+  flex-grow:2;
+  border:none;
+  font-size: 24px;
+}
+
+input:focus {
+  outline: none;
 }
 
 button {
-  height: 56px;
-  border: 2px solid black;
-  border-radius: 12px;
-  padding-left:10px;
+  border: none;
+  background: none;
 }
