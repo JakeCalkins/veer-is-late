@@ -1,0 +1,30 @@
+/* A component for the SID login */
+
+h2 {
+  font-size: 2em;
+}
+
+form {
+  display:flex;
+  flex-direction:row;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding-left:10px;
+  font-size: 24px;
+  width: 400px;
+}
+
+input {
+  flex-grow:2;
+  border:none;
+  font-size: 24px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  background: none;
+}

@@ -1,0 +1,9 @@
+#navbar {
+  background-image: linear-gradient(to right, rgba(173,0,255,0.5), rgba(255,0,174,0.5));
+  margin: none;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 3em;
+}
