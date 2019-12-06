@@ -1,7 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* MAKE INTO COMPONENT */
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #3498db; /* Blue */
@@ -25,6 +25,9 @@ body {
 h1 {
   font-size: 3em;
 }
+/* =============== */
+
+/* MAKE INTO COMPONENT */
 
 h2 {
   font-size: 2em;
@@ -54,3 +57,5 @@ button {
   border: none;
   background: none;
 }
+
+/* =============== */

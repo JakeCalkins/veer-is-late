@@ -5,28 +5,19 @@
     <title>Login | CC</title>
   </head>
   <body>
-    <noscript>We love noscript too, but it's tough to render the app without JS.</noscript>
-    <div id="navbar">
+    <div id="navbar"> <!-- TODO TURN INTO COMPONENT -->
       <h1>Calendar Commander</h1>
       <img src="./calendar-commander/src/calendar_icon.png" />
       <div class="loader"></div>
     </div>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <!--
-      TODO 
-      [ ] background image (pure CSS)
-      [x] web form (see root)
-      [ ] nav bar (JSX component)
-    -->
+    <div id="root"> <!-- Testing how all the containers render -->
+      <student_id_container></student_id_container>
+      <requirements_container></requirements_container>
+      <schedule_generator></schedule_generator>
+      <progress_container></progress_container>
+      <navbar></navbar>
+      <menu_items></menu_items>
+      <course_option></course_option>
+    </div>
   </body>
 </html>
