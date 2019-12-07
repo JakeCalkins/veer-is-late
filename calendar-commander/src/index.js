@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import App from './App';
+import student_id from './components/student_id_container/student_id';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<student_id />, document.getElementById('root'));
 
 // NOTE: removed service worker for the MVP
