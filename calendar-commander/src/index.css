@@ -245,6 +245,8 @@ body {
   padding: 0;
 }
 
+* { font-family: "SF Display",Arial, Helvetica, sans-serif; }
+
 #root {
   margin: 0;
   padding: 0;

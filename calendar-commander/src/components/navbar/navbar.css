@@ -1,80 +1,81 @@
 /* Component for navbar */
 
 #navbar {
-  background-color: #881c1c;
-  margin: none;
-  padding: 30px;
-}
-
-
-#navbar h1 {
-  font-size: 2em;
-  color: white;
-}
-
-#navbar h3 {
-  color: white;
-  font-weight: 100;
-  display: inline;
-  text-align: center;
-}
-
-#navbar figure {
-  display: inline;
-}
-
-
-#navbar #spire-return, #saved-schedules{
-  border: 2px solid white;
-  border-radius: 12px;
-}
-
-#navbar img {
-  height: 20px;
-  display: block;
-}
-
-#navbar .calendar {
-  position: relative;
-  top: 7px;
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 40px;
-}
-
-#navbar #spire-return{
-  position: absolute;
-  right: 35px;
-}
-
-#navbar #spire-return, #navbar #saved-schedules {
-  width: 220px;
-  height: 50px;
-}
-
-#navbar #saved-schedules{
-  position: absolute;
-  right: 280px;
-}
-
-#navbar .menu div * {
-  display: inline;
-}
-
-
-#navbar #spire-return img, #navbar #saved-schedules img {
-  left: 24px;
-  position: relative;
-  top: 13px;
-}
-
-#navbar #spire-return h3, #navbar #saved-schedules h3{
-  position: relative;
-  left: 38px;
-  top: 11px;
-}
-
-#navbar .menu div {
-  display:inline-block
-}
-
+    background-color: #881c1c;
+    margin: none;
+    padding: 30px;
+  }
+  
+  
+  #navbar h1 {
+    font-size: 2em;
+    color: white;
+  }
+  
+  #navbar h3 {
+    color: white;
+    font-weight: 100;
+    display: inline;
+    text-align: center;
+  }
+  
+  #navbar figure {
+    display: inline;
+  }
+  
+  
+  #navbar #spire-return, #saved-schedules {
+    border: 2px solid white;
+    border-radius: 12px;
+  }
+  
+  #navbar img {
+    height: 20px;
+    display: block;
+  }
+  
+  #navbar .calendar {
+    position: relative;
+    top: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 40px;
+  }
+  
+  #navbar #spire-return{
+    position: absolute;
+    right: 35px;
+  }
+  
+  #navbar #spire-return, #navbar #saved-schedules {
+    width: 220px;
+    height: 50px;
+  }
+  
+  #navbar #saved-schedules{
+    position: absolute;
+    right: 280px;
+  }
+  
+  #navbar .menu div * {
+    display: inline;
+  }
+  
+  
+  #navbar #spire-return img, #navbar #saved-schedules img {
+    left: 24px;
+    position: relative;
+    top: 13px;
+  }
+  
+  #navbar #spire-return h3, #navbar #saved-schedules h3{
+    position: relative;
+    left: 38px;
+    top: 11px;
+  }
+  
+  #navbar .menu div {
+    display:inline-block
+  }
+  
+  

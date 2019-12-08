@@ -9,7 +9,7 @@ module.exports = function(app, express) {
     app.get('/api/schedule', function(req, res) {
         // Use python shell to run shedule builder
         var PythonShell = require('python-shell').PythonShell;
-        var pyshell = new PythonShell('/Users/MatthewGimlewicz/Documents/veer-is-late/server/config/test.py');
+        var pyshell = new PythonShell('/Users/MatthewGimlewicz/Documents/veer-is-late/server/courses/scheduleHandler.py', {args: ['Matt', 'G']});
 
         pyshell.on('message', function (message) {
             // received a message sent from the Python script (a simple "print" statement)
