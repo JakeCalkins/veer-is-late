@@ -26,61 +26,6 @@ function getARR(req, response) {
         console.log(`\nPulling academic requirements for student with id ${sid} ...`);
     }
 
-    var fetchCourses = (courseList) => {
-        var promise = Promise.resolve();
-        courseList.forEach(function(course, index, array) {
-            // Execute query once promise is resolved
-            // [imposes order on query execution]
-            promise = promise.then(function() {
-                db.executeQuery(
-                    "SELECT DISTINCT c.major, c.cnum " + 
-                    "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
-                    "WHERE c.cnum = $1 AND c.major = $2 OR (c.major = 'CICS' and c.cnum = $1)", [course.cnum, req_major], function(err, res) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                        if (res != null) {
-                            // Handles courses that are not yet in the DB
-                            if (res.rows.length == 0) {
-                                console.log(course)
-                                unsatisfied.push(course);
-                            } else {
-                                // Determine if course is satisfied and add course information
-                                var courseInfo = res.rows[0];
-                                if (course.is_satisfied) {
-                                    satisfied.push(courseInfo);
-                                } else {
-                                    unsatisfied.push(courseInfo);
-                                }
-                                // Log output to console
-                                if (index == array.length - 1) {
-                                    // Simulating result for an actual HTTP request
-                                    res = {
-                                        unsatisfied: unsatisfied,
-                                        satisfied: satisfied
-                                    }
-                                    console.log("\nSATISFIED\n")
-                                    console.log(satisfied)
-
-                                    console.log("\nUNSATISFIED\n")
-                                    console.log(unsatisfied)
-                                    satisfied = []
-                                    unsatisfied = []
-                                    //return res;
-                                }
-                            }
-                        }
-                });
-                return new Promise(function(resolve) {
-                    // ElephantSQL can only support 5 concurrent connections, so add a slight delay
-                    // timeout value is 100, this is a safe value, anything less might result in missing information
-                    // in output (ie. missing courses that should be there)
-                    setTimeout(resolve, 300);
-                });
-            });
-        });
-    }
-
     // Pull ARR from database, returns a JSON object
     db.executeQuery("SELECT arr FROM Students WHERE sid = $1", [sid], pullARR)
     .then(function() {
@@ -97,10 +42,10 @@ function getARR(req, response) {
         // Extract the student's upper level electives (400+)
         req_400_electives = req_report.major_requirements.upper_level_electives;
 
-        //fetchCourses(req_courses);
-        //fetchCourses(req_300_electives);
-        //fetchCourses(req_400_electives);
+        // Extract required geneds
+        req_geneds = req_report.major_requirements.gened_requirements;
 
+        // Promise ensures we run queries sequentially
         var promise = Promise.resolve();
 
         req_courses.forEach(function(course, index, array) {
@@ -108,49 +53,48 @@ function getARR(req, response) {
             // Execute query once promise is resolved
             // [imposes order on query execution]
             promise = promise.then(function() {
-                db.executeQuery(
-                    "SELECT DISTINCT c.major, c.cnum " + 
-                    "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
-                    "WHERE c.cnum = $1 AND c.major = $2 OR (c.major = 'CICS' and c.cnum = $1)", [course.cnum, req_major], function(err, res) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                        if (res != null) {
-                            // Handles courses that are not yet in the DB
-                            if (res.rows.length == 0) {
-                                console.log(course)
-                                unsatisfied.push(course);
-                            } else {
-                                // Determine if course is satisfied and add course information
-                                var courseInfo = res.rows[0];
-                                if (course.is_satisfied) {
-                                    satisfied.push(courseInfo);
-                                } else {
-                                    unsatisfied.push(courseInfo);
-                                }
-                                // Log output to console
-                                if (index == array.length - 1) {
-                                    // Simulating result for an actual HTTP request
-                                    res = {
-                                        unsatisfied: unsatisfied,
-                                        satisfied: satisfied
-                                    }
-                                    console.log("\nSATISFIED\n")
-                                    console.log(satisfied)
 
-                                    console.log("\nUNSATISFIED\n")
-                                    console.log(unsatisfied)
-                                    satisfied = []
-                                    unsatisfied = []
-                                    //return res;
-                                }
-                            }
-                        }
+                // Executable SQL to pull courses
+                var sql = "SELECT DISTINCT c.major, c.cnum " + 
+                          "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
+                          "WHERE c.cnum = $1 AND c.major = $2"
+                
+                // If major is SQL also consider CICS courses
+                if (req_major == 'COMPSCI') {
+                    sql += "OR (c.major = 'CICS' and c.cnum = $1)"
+                }
+                
+                // Execute the query with the course number and major
+                db.executeQuery(sql, [course.cnum, req_major], function(err, res) {
+
+                    if (err) {
+                        return console.log(err);
+                    }
+
+                    if (res == null) {
+                        console.log("Required courses are NOT found\n");
+                    }
+                    
+                    var queryResults = res.rows;
+
+                    // Handles courses that are not yet in the DB
+                    if (queryResults.length == 0) {
+                        console.log("Course NOT FOUND " + course);
+                    } else {
+
+                        var completed = course.is_satisfied;
+                        
+                        // courseInfo = { major, cnum }
+                        var courseInformation = res.rows[0];
+
+                        if (completed)
+                            satisfied.push(courseInformation);
+                        else if (course.take_immediately)
+                            unsatisfied.push(courseInformation);
+                    }
                 });
                 return new Promise(function(resolve) {
-                    // ElephantSQL can only support 5 concurrent connections, so add a slight delay
-                    // timeout value is 100, this is a safe value, anything less might result in missing information
-                    // in output (ie. missing courses that should be there)
+                    // Prevent more than 5 concurrent connections for ElephantSQL
                     setTimeout(resolve, 300);
                 });
             });
@@ -158,124 +102,68 @@ function getARR(req, response) {
 
         req_400_electives.forEach(function(course, index, array) {
 
-            // Execute query once promise is resolved
-            // [imposes order on query execution]
             promise = promise.then(function() {
-                db.executeQuery(
-                    "SELECT DISTINCT c.major, c.cnum " + 
-                    "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
-                    "WHERE c.cnum like '4%' AND c.major = $1", [req_major], function(err, res) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                        if (res != null) {
-                            // Handles courses that are not yet in the DB
-                            if (res.rows.length == 0) {
-                                console.log("COURSE NOT FOUND IN DATABASE\n")
-                                unsatisfied.push(course.major, course.cnum);
-                            } else {
-                                // Determine if course is satisfied and add course information
-                                var courseInfo;
-                                for (var i = 0; i < res.rows.length; i++) {
-                                    if (satisfied.includes(res.rows[i]))
-                                        continue;
-                                    if (unsatisfied.includes(res.rows[i].cid))
-                                        continue;
-                                    courseInfo = res.rows[i];
-                                    break;
-                                }
-                                if (course.is_satisfied) {
-                                    satisfied.push(courseInfo.major, courseInfo.cnum);
-                                } else {
-                                    unsatisfied.push(courseInfo.major, courseInfo.cnum);
-                                }
-                                // Log output to console
-                                if (index == array.length - 1) {
-                                    // Simulating result for an actual HTTP request
-                                    res = {
-                                        unsatisfied: unsatisfied,
-                                        satisfied: satisfied
-                                    }
-                                    console.log("\nSATISFIED\n")
-                                    console.log(satisfied)
 
-                                    console.log("\nUNSATISFIED\n")
-                                    console.log(unsatisfied)
-                                    unsatisfied = []
-                                    satisfied = []
-                                    //return res;
-                                }
+                // Find courses in the major that begin with 400
+                var sql = "SELECT DISTINCT c.major, c.cnum " + 
+                          "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
+                          "WHERE c.cnum like '4%' AND c.major = $1";
+
+                db.executeQuery(sql, [req_major], function(err, res) {
+
+                    if (err) {
+                        return console.log(err);
+                    }
+
+                    if (res == null) {
+                        console.log("400 level courses are NOT found\n");
+                    }
+
+                    if (res.rows.length == 0) {
+                        console.log("Course NOT FOUND " + course);
+                    } else {
+                        
+                        var completed = course.is_satisfied;
+
+                        // { major, cnum }
+                        var courseInformation;
+                        var queryResults = res.rows;
+
+                        var upper_satisfied = []
+
+
+                        for (var i = 0; i < queryResults.length; i++) {
+
+                            if (completed && queryResults[i].major == req_major && queryResults[i].cnum == course.cnum) {
+                                upper_satisfied.push(queryResults[i]);
+                                break;
                             }
+        
                         }
+
+                        if (index == array.length - 1) {
+                    
+                            response.json({
+                                required_courses: {
+                                    satisfied: satisfied,
+                                    unsatisfied: unsatisfied
+                                },
+                                upper_level_courses: {
+                                    available: {
+                                        queryResults,
+                                        take_immediately: false
+                                    },
+                                    required: 3
+                                },
+                                geneds: req_geneds
+                            });
+
+                            response.send()
+                        }
+                    }
                 });
                 return new Promise(function(resolve) {
-                    // ElephantSQL can only support 5 concurrent connections, so add a slight delay
-                    // timeout value is 100, this is a safe value, anything less might result in missing information
-                    // in output (ie. missing courses that should be there)
-                    setTimeout(resolve, 300);
-                });
-            });
-        });
-
-        req_300_electives.forEach(function(course, index, array) {
-
-            // Execute query once promise is resolved
-            // [imposes order on query execution]
-            promise = promise.then(function() {
-                db.executeQuery(
-                    "SELECT DISTINCT c.major, c.cnum " + 
-                    "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
-                    "WHERE c.cnum like '3%' AND c.major = $1", [req_major], function(err, res) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                        if (res != null) {
-                            // Handles courses that are not yet in the DB
-                            if (res.rows.length == 0) {
-                                console.log("COURSE NOT FOUND IN DATABASE\n")
-                                unsatisfied.push(course.cid);
-                            } else {
-                                // Determine if course is satisfied and add course information
-                                var courseInfo;
-                                for (var i = 0; i < res.rows.length; i++) {
-                                    if (satisfied.includes(res.rows[i]))
-                                        continue;
-                                    if (unsatisfied.includes(res.rows[i].cid))
-                                        continue;
-                                    courseInfo = res.rows[i];
-                                    break;
-                                }
-                                if (course.is_satisfied) {
-                                    satisfied.push(courseInfo.cid);
-                                } else {
-                                    unsatisfied.push(courseInfo.cid);
-                                }
-                                // Log output to console
-                                if (index == array.length - 1) {
-                                    // Simulating result for an actual HTTP request
-                                    res = {
-                                        unsatisfied: unsatisfied,
-                                        satisfied: satisfied
-                                    }
-                                    console.log("\nSATISFIED\n")
-                                    console.log(satisfied)
-
-                                    console.log("\nUNSATISFIED\n")
-                                    console.log(unsatisfied)
-                                    //return res;
-                                    response.json({
-                                        unsatisfied: unsatisfied,
-                                        satisfied: satisfied
-                                    });
-                                    response.send();
-                                }
-                            }
-                        }
-                });
-                return new Promise(function(resolve) {
-                    // ElephantSQL can only support 5 concurrent connections, so add a slight delay
-                    // timeout value is 100, this is a safe value, anything less might result in missing information
-                    // in output (ie. missing courses that should be there)
+                    // Prevent more than 5 concurrent connections for ElephantSQL
                     setTimeout(resolve, 300);
                 });
             });
