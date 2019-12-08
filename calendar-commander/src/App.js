@@ -9,7 +9,7 @@ function App() {
       <h2>Enter your Student ID</h2>
       <form action="/requirements-aquisiton.html">
         <input type="text" name="SID" placeholder="8 digits" pattern=".{8, 8}" maxlength="8"/>
-        <button type="submit"><img src={submit_button} /></button>
+        <button type="submit"><img src={submit_button} alt="" /></button>
       </form>
     </div>
   );
