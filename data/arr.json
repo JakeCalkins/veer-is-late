@@ -1,0 +1,111 @@
+{
+    "major_requirements": {
+        "major": "COMPSCI",
+        "courses": [
+            {
+                "cnum": 121,
+                "is_satisfied": false,
+                "take_immediately": true
+            },
+            {
+                "cnum": 187,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 220,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 230,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 240,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 250,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 305,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 311,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 326,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 377,
+                "is_satisfied": false,
+                "take_immediately": false
+            }
+        ],
+        "upper_level_electives": [
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            }, 
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            }
+        ],
+        "mid_level_electives": [
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            }, 
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            }
+        ],
+        "gened_requirements": [
+           {"DU": 2},
+           {"AT": 1},
+           {"AL": 1},
+           {"HS": 1},
+           {"DG": 1},
+           {"R1": 1},
+           {"R2": 1}
+        ]
+    },
+    "graded_residence_unit_requirement": {
+        "is_satisfied": true,
+        "units_taken": 81,
+        "units_required": 54,
+        "units_needed": 0
+    }
+}
