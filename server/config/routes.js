@@ -7,17 +7,21 @@ module.exports = function(app, express) {
 
     // GET request for schedule processing
     app.get('/api/schedule', function(req, res) {
-        var spawn = require ('child_process').spawn;
+        // Use python shell
+        var PythonShell = require('python-shell').PythonShell;
+        var pyshell = new PythonShell('/Users/MatthewGimlewicz/Documents/veer-is-late/server/config/test.py');
 
-        var process = spawn('python', 
-                            ['../courses/scheduleHandler.py',
-                            req.query.firstname,
-                            req.query.lastname]);
-        
-        process.stdout.on('data', function(data) {
-            console.log(data.toString())
-            res.send(data.toString());
-        })
+        pyshell.on('message', function (message) {
+            // received a message sent from the Python script (a simple "print" statement)
+            console.log(message);
+        });
+
+        // end the input stream and allow the process to exit
+        pyshell.end(function (err) {
+            if (err){
+                console.log(err);
+            };
+        });
     });
 
 };
