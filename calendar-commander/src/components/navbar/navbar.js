@@ -9,7 +9,6 @@ function App() {
       <div id="navbar"> <!-- TODO TURN INTO COMPONENT -->
         <h1>Calendar Commander</h1>
         <img src="./calendar-commander/src/calendar_icon.png" />
-        <div class="loader"></div>
       </div>
     </div>
   );

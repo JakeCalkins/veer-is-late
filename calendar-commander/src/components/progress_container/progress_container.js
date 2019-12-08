@@ -6,11 +6,14 @@ import calendar_icon from './calendar_icon.png';
 function App() {
   return (
     <div className="App">
-      <h2>Enter your Student ID</h2>
-      <form action="/requirements-aquisiton.html">
-        <input type="text" name="SID" placeholder="8 digits" pattern=".{8, 8}" maxlength="8"/>
-        <button type="submit"><img src={submit_button} /></button>
-      </form>
+      <h2>Pulling your academic requirements report...</h2>
+      <img src="" alt="academic requirements splash image" />
+      <div class="loader"></div>
+      <div class="circles">
+        <div class="circle" id="current-item"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
     </div>
   );
 }
