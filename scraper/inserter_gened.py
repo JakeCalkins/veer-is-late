@@ -112,10 +112,13 @@ def findgeneds():
                 #print(course[7])
                 result = regex.search(course[7])
                 if result is not None:
+                    print(str(result.group(1).strip().replace(" ", "")))
                     geneds.append(str(result.group(1).strip().replace(" ", "")))
+    '''
     print(geneds)
     print(len(geneds))
     print(geneds[10])
+    '''
 
 if __name__ == "__main__":
     findgeneds()

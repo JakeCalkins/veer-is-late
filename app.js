@@ -10,3 +10,15 @@ app.use(bodyParser.json())
 // Basic Query Examples
 //db.executeQuery("Select cname, cnum from course", null);
 //db.executeQuery("Select first_name from student where sid = $1", [1]);
+
+var req = {
+    query: {
+        sid: 23456789
+    }
+}
+
+var res = {
+    
+}
+
+courseHandler.getARR(req, res)
