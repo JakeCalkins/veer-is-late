@@ -1,5 +1,6 @@
 {
     "major_requirements": {
+        "major": "COMPSCI",
         "courses": [
             {
                 "cnum": 121,
@@ -42,7 +43,7 @@
                 "is_satisfied": true
             }
         ],
-        "400_level_electives": [
+        "upper_level_electives": [
             {
                 "cnum": -1,
                 "is_satisfied": false
@@ -56,7 +57,7 @@
                 "is_satisfied": false
             }
         ],
-        "300_level_electives": [
+        "mid_level_electives": [
             {
                 "cnum": -1,
                 "is_satisfied": false

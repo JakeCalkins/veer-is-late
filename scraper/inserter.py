@@ -1,10 +1,12 @@
 import psycopg2
 import json
+import re
 
 def connect():
     """ Connect to the elephantSQL server """
     conn = None
     try:
+
         # Connect to elephantSQL
         print("\nConnecting to elephantSQL server\n")
         conn = psycopg2.connect(host="salt.db.elephantsql.com", database="oohprrpx", user="oohprrpx", password="VCPIDRy5mbc2oRw7fiPqVEwDgs5GfW8R")
@@ -17,9 +19,15 @@ def connect():
 
         with open("values.json") as json_file:
 
+            regex = re.compile("Gen\W{,3}Ed\W(.*?)\)")
+
             # Load JSON data
             data = json.load(json_file)
 
+            labID = 0
+            mPrev = ""
+            cPrev = ""
+            tPrev = ""
             for course in data.values():
 
                 major = course[0] # Major literal                    [ex. PSYCH, STAT, ACCNT]
@@ -32,6 +40,15 @@ def connect():
 
                 # Extract first and last names from professor JSON, split " " and ";"
                 # to extract names and handle multiple professor cases
+                
+                if(len(course) > 7):
+                    result = regex.search(course[7])
+                    if result is not None:
+                        #print(str(result.group(1).strip().replace(" ", "")))
+                        gened = (str(result.group(1).strip().replace(" ", "")))
+                        cur.execute("UPDATE Courses SET gened = %s WHERE cnum = %s AND major = %s AND type = %s AND cname = %s AND time_of_day = %s", ((gened, cnum, major, typ, title, times)))
+
+                '''
                 professor_names = [name.split(" ") for name in prof.split(";") if name]
                 stored_names = []
                 for pair in professor_names:
@@ -41,37 +58,49 @@ def connect():
                     stored_names.append((fname, lname))
 
                     # Insert professor names into database
-                    cur.execute("INSERT INTO Professors(first_name, last_name) VALUES(%s, %s)", ((fname, lname)))
-                    print((fname, lname))
-
-                # Separate table for LAB and DIS
+                    #cur.execute("INSERT INTO Professorsfinal(fname, lname) VALUES(%s, %s)", ((fname, lname)))
+                    #print((fname, lname))
+                '''
+                '''# Separate table for LAB and DIS
                 if (typ == "LAB" or typ == "DIS"):
-                    cur.execute("INSERT INTO Labs VALUES(%s, %s, %s, %s, %s)", ((cnum, major, title, times, "0")))
-                    print("LAB: " + cnum + major + title + times)
+                    if (mPrev != major or cPrev != cnum or tPrev != title):
+                        labID += 1
+                    cur.execute("INSERT INTO Labsfinal VALUES(%s, %s, %s, %s, %s, %s)", ((cnum, major, title, times, typ, labID)))
+                    mPrev = major
+                    cPrev = cnum
+                    tPrev = title
+                    #print("LAB: " + cnum + major + title + times)
+                    #z = 1
+                '''
+                #else:
+                '''
+                if len(stored_names) > 0:
+                    for pair in stored_names:
+                        cur.execute("SELECT p.pid FROM Professors p WHERE fname = %s AND lname = %s", ((pair[0], pair[1])))
+                        #print((pair[0], pair[1]))
+                        pid = cur.fetchall()[0][0]
+
+                        cur.execute("SELECT DISTINCT l.lid " + 
+                                    "FROM labsfinal l INNER JOIN Coursesnew c " +
+                                    "ON c.cname = l.title AND l.cnum = c.cnum AND l.major = c.major " +
+                                    "WHERE c.cnum = %s AND c.cname = %s AND c.major = %s", ((cnum, title, major)))
+
+                        labs = cur.fetchall()
+                        if (len(labs) != 0):
+                            for section in labs:
+                                lid = section[0]
+                                # Lab DOES exist
+                                cur.execute("INSERT INTO Coursestemp VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", ((cnum, title, "4", pid, lid, "0", "TBD", "TBD", major, "TBD", times, typ)))
+                                print(major)
+                        else:
+                            # Lab does NOT exist
+                            cur.execute("INSERT INTO Coursestemp VALUES(%s, %s, %s, %s, null, %s, %s, %s, %s, %s, %s, %s)", ((cnum, title, "3", pid, "0", "TBD", "TBD", major, "TBD", times, typ)))
+                            print(major)
                 else:
-                    if len(stored_names) > 0:
-                        for pair in stored_names:
-                            cur.execute("SELECT p.pid FROM Professors p, Courses c WHERE first_name = %s AND last_name = %s", ((pair[0], pair[1])))
-                            pid = cur.fetchall()[0][0]
-
-                            cur.execute("SELECT DISTINCT l.lid " + 
-                                        "FROM labs l INNER JOIN Courses c " +
-                                        "ON c.cname = l.title AND l.cnum = c.cnum AND l.major = c.major " +
-                                        "WHERE c.cnum = %s AND c.cname = %s AND c.major = %s", ((cnum, title, major)))
-
-                            labs = cur.fetchall()
-                            if (len(labs) != 0):
-                                for section in labs:
-                                    lid = section[0]
-                                    cur.execute("INSERT INTO Courses VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", ((cnum, title, "1", pid, lid, "0", "TBD", "TBD", major, "TBD", times)))
-                                    print("LEC: %s %s %s %s %s %s", (cnum, major, title, times, str(pid), str(lid)))
-                            else:
-                                cur.execute("INSERT INTO Courses VALUES(%s, %s, %s, %s, null, %s, %s, %s, %s, %s, %s)", ((cnum, title, "1", pid, "0", "TBD", "TBD", major, "TBD", times)))
-                                print("LEC NO LAB: %s %s %s %s %s", (cnum, major, title, times, str(pid)))
-                    else:
-                        # Courses with no professor ASSUME TO BE ONLINE COURSES
-                        cur.execute("INSERT INTO Courses VALUES(%s, %s, %s, null, null, %s, %s, %s, %s, %s, %s)", ((cnum, title, "1", "1", "TBD", "TBD", major, "TBD", times)))
-                        print("LEC NO PROF: %s %s %s %s", (cnum, major, title, times))
+                    # Courses with no professor ASSUME TO BE ONLINE COURSES
+                    cur.execute("INSERT INTO Coursestemp VALUES(%s, %s, %s, null, null, %s, %s, %s, %s, %s, %s, %s)", ((cnum, title, "3", "0", "TBD", "TBD", major, "TBD", times, typ)))
+                    print(major)
+                '''
 
         save = input("Commit updates? [Y/N]\n")
         if (save == "Y"):
