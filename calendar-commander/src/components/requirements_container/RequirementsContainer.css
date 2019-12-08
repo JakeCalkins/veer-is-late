@@ -1,0 +1,53 @@
+.wrappist {
+  box-shadow: 0px 0px 20px 12px rgba(167, 167, 167, 0.7);
+  border-radius: 12px;
+  width: 520px;
+  height: 400px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 40px 40px 40px 40px;
+}
+
+
+#requirements-container .title-header {
+  font-size: 1.6em;
+  letter-spacing: 0px;
+  font-weight: 100;
+}
+
+#requirements-container .sub-headers{
+  position: relative;
+  top: 15px;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+#requirements-container #min-credit-input, #requirements-container #max-credit-input {
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 55px;
+  height: 29px;
+  font-size: 22px;
+  padding: 4px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#requirements-container .credit-input-section *{
+  display: inline;
+}
+
+#requirements-container .divide {
+  font-weight: 100;
+  font-size: 1.1em;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgba(1, 1, 1,.8);
+}
