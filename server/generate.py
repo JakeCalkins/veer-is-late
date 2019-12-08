@@ -23,7 +23,9 @@ def connect():
             data = json.load(json_file)
             for i in data["required_courses"]["unsatisfied"]:
                 #print(i)
-                print(cur.execute("SELECT * courses where cnum = '%s' and major='%s'", i['cnums'], i['major']))
+                cur.execute("SELECT * FROM courses where cnum = %s and major=%s", ((i['cnum'], i['major'])))
+                results = cur.fetchall()[0]
+                print(results)
     
             
 
