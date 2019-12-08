@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import submit_button from "./submit_triangle.png";
 import calendar_icon from './calendar_icon.png';
 
 function App() {
