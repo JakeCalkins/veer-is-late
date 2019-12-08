@@ -36,9 +36,6 @@ function getARR(req, response) {
         // Extract the student's REQUIRED major courses
         req_courses = req_report.major_requirements.courses;
 
-        // Extract the student's upper level electives (300+)
-        req_300_electives = req_report.major_requirements.mid_level_electives;
-
         // Extract the student's upper level electives (400+)
         req_400_electives = req_report.major_requirements.upper_level_electives;
 
