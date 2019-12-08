@@ -4,8 +4,9 @@
   width: 520px;
   height: auto;
   margin: auto;
-  margin-top: 100px;
-  padding: 40px 40px 40px 40px;
+  margin-top: 50px;
+  padding: 40px 40px 10px 40px;
+  margin-bottom: 30px;
 }
 
 
@@ -13,13 +14,18 @@
   font-size: 1.7em;
   letter-spacing: 0px;
   font-weight: 100;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #requirements-container .sub-headers {
   position: relative;
-  top: 15px;
+  top: 0px;
   font-weight: 300;
   font-size: 1.3em;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #requirements-container #min-credit-input,
@@ -35,6 +41,7 @@
   font-weight: 200;
 }
 
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -44,6 +51,7 @@ input[type=number]::-webkit-outer-spin-button {
 #requirements-container .credit-input-section * {
   display: inline;
 }
+
 
 #requirements-container .divide {
   font-weight: 100;
@@ -109,6 +117,7 @@ input[type=number]::-webkit-outer-spin-button {
   top: 2px;
   margin: 2px;
   margin-left: 10px;
+  vertical-align: middle;
 }
 
 #requirements-container #min-time-input, #requirements-container #max-time-input  {
@@ -125,6 +134,7 @@ input[type=number]::-webkit-outer-spin-button {
   top: 2px;
   margin: 2px;
   margin-left: 5px;
+  vertical-align: middle;
 }
 
 #requirements-container #max-time-input {
@@ -162,16 +172,272 @@ input[type=number]::-webkit-outer-spin-button {
   top: 2px;
   margin: 2px;
   margin-left: 5px;
+  
 }
 
 #requirements-container span{
   position: relative;
   right: 5px;
   bottom: 1px;
+  vertical-align: middle;
 }
 
 #requirements-container .add-sign {
   height: 12px;
   position: relative;
   right: 20px;
+  vertical-align: middle;
+}
+
+#requirements-container  .option button{
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 35px;
+  height: 35px;
+  font-size: 15px;
+  padding: 4px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  position: relative;
+  top: 2px;
+  margin: 2px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+#requirements-container  .option input {
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  padding: 0;
+  margin-left: 10px;
+  position: relative;
+  top: 1px;
+}
+
+
+
+#requirements-container .option-list .option *{
+  display: inline;
+}
+
+#requirements-container .option-list {
+  margin-top: 10px;
+}
+
+#requirements-container .option-list .option h1{
+  font-size: 1em;
+  font-weight: 100;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-top: -1px;
+}
+
+#requirements-container .option-list .option span{
+  float: right;
+  margin-right: 30px;
+  position: relative;
+  top: 3px;
+}
+
+#requirements-container .option-list .option .side-option-false{
+  color: rgba(150, 150, 150, .5);
+}
+
+#requirements-container .option-list .option .side-option-false input{
+  border: 2px solid rgba(167, 167, 167, .3) !important;
+  
+}
+
+
+#requirements-container .option-list .option .side-option-true{
+  color: black;
+}
+
+#requirements-container .option-list .option .side-option-true input{
+  border: 2px solid black !important;
+  
+}
+
+
+#requirements-container .input-options .input-opt * {
+  display: inline;
+}
+
+#requirements-container .input-options h1{
+  font-size: 1em;
+  font-weight: 100;
+  vertical-align: middle;
+}
+
+#requirements-container .input-options input{
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  padding: 0;
+  margin-left: 10px;
+  position: relative;
+  top: 1px;
+}
+
+#requirements-container .input-options {
+  margin-top: 10px;
+}
+
+#requirements-container .between-any-toggle {
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 65px;
+  height: 29px;
+  font-size: 15px;
+  padding: 4px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  position: relative;
+  top: 2px;
+  margin: 2px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+#requirements-container #min-class-input, #requirements-container #max-class-input  {
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 60px;
+  height: 17px;
+  font-size: 15px;
+  padding: 4px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  position: relative;
+  top: 2px;
+  margin: 2px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+#requirements-container #max-class-input {
+  margin-left: 10px;
+}
+
+#requirements-container .class-options-false {
+  margin-left: 30px;
+}
+
+#requirements-container .class-options-true {
+  margin-left: 30px;
+}
+
+#requirements-container .class-options-false input{
+  border: 2px solid rgba(167, 167, 167, .3) !important;
+}
+
+#requirements-container .class-options-false *, #requirements-container .class-options-false ::placeholder{
+  color: rgba(167, 167, 167, .3);
+}
+
+
+#requirements-container .class-options-true input{
+  border: 2px solid black !important;
+}
+
+#requirements-container .class-options-true *, #requirements-container .class-options-true ::placeholder{
+  color: rgba(150, 150, 150, 1);
+}
+
+
+#requirements-container #course-class-input {
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 35px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  padding: 0;
+  margin-left: 10px;
+  position: relative;
+  margin-top: 5px;
+}
+
+#requirements-container #seminar-class-input {
+  border-radius: 12px;
+  border: 2px solid black;
+  width: 35px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  padding: 0;
+  margin-left: 10px;
+  position: relative;
+  margin-top: 5px;
+}
+
+#requirements-container .seminar-text {
+  font-weight: 100;
+  margin-left: 10px;
+  color: rgb(1, 1, 1);
+  font-size: 1.1em;
+  margin-top: 9px;
+  position: relative;
+  top: 2px;
+}
+
+#requirements-container #generate {
+  width: 300px;
+  height: 55px;
+  background-color: #881c1c;
+  color: white;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+
+#requirements-container .forthebutton {
+  margin-left: auto;
+  margin-right: auto;
+  width: 301px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+#requirements-container .circles {
+  margin-left: auto;
+  margin-right: auto;
+  width: 2.9rem;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+#requirements-container .circle {
+  height: 0.5rem;
+  width: 0.5rem;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.1rem;
+}
+
+#requirements-container #current-item.circle {
+  background-color: #000;
 }

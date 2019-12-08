@@ -1,6 +1,6 @@
 import React from 'react';
 import "./RequirementsContainer.css"
-import add_icon from "../menu_items/addIcon.png"
+import add_icon from "../MenuItems/addIcon.png"
 
 class RequirementsContainer extends React.Component {
   render() {
@@ -40,6 +40,55 @@ class RequirementsContainer extends React.Component {
                 <span class="requirement">Add new requirement to your list</span>
                 </button>
             </div>
+          </div>
+          <div class="option-list">
+            <div class="option">
+              <button class="honors-selection"></button>
+              <h1>Honors thesis?</h1>
+            </div>
+            <div class="option">
+              <button class="online-selection"></button>
+              <h1>Online courses?</h1>
+              <span class="side-option-false">
+                <h1>How many maximum?</h1>
+                <input class="online-input"></input>
+              </span>
+            </div>
+            <div class="option">
+              <button class="independent-selection"></button>
+              <h1>Independent study?</h1>
+              <span class="side-option-false">
+                <h1>How many maximum?</h1>
+                <input class="independent-input"></input>
+              </span>
+            </div>
+          </div>
+          <div class="input-options">
+              <div class="input-opt">
+                <p class="days-text">Preference in class size?</p>
+                <button class="between-any-toggle">any</button>
+                <div class="class-options-false">
+                <input id="min-class-input" type="text" placeholder="50"></input>
+                  <p class="days-text">and</p>
+                  <input id="max-class-input" type="text" placeholder="100"></input>
+              </div>
+            </div>
+            <div class="input-opt">
+                <p class="days-text">Maximum number of in-major courses: </p>
+                <input id="course-class-input" type="text" placeholder="5"></input>
+            </div>
+              <div class="input-opt">
+                <p class="seminar-text">How many seminars? </p>
+                <input id="seminar-class-input" type="text" placeholder="0"></input>
+              </div>
+          </div>
+          <div class="forthebutton">
+            <button id="generate">Generate!</button>
+          </div>
+          <div class="circles">
+            <div class="circle"></div>
+            <div class="circle" id="current-item" ></div>
+            <div class="circle"></div>
           </div>
         </div>
       </div>
