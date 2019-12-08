@@ -48,7 +48,11 @@
                 "is_satisfied": false,
                 "take_immediately": true
             }
-        ]
+        ],
+        "gened_requirements": [
+            {"AT": 1},
+            {"AL": 1}
+         ]
     },
     "graded_residence_unit_requirement": {
         "is_satisfied": true,

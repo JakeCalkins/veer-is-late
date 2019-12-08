@@ -153,7 +153,7 @@ function getARR(req, response) {
                                         courses: queryResults,
                                         take_immediately: false
                                     },
-                                    required: 3
+                                    required: 9
                                 },
                                 geneds: req_geneds
                             }
@@ -168,7 +168,7 @@ function getARR(req, response) {
                                         courses: queryResults,
                                         take_immediately: false
                                     },
-                                    required: 3
+                                    required: 9
                                 },
                                 geneds: req_geneds
                             });
