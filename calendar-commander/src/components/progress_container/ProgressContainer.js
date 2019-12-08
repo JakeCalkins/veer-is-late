@@ -8,7 +8,7 @@ class ProgressContainer extends React.Component {
       <div className="ProgressContainer">
         <div class="wrappist">
           <h2>Pulling your academic requirements report...</h2>
-          <img src={assemblingSchedules} alt="academic requirements splash image" />
+          <img src={assemblingSchedules} alt="academic requirements splash image" class="illustration" />
           <div class="loader"></div>
           <div class="circles">
             <div class="circle" id="current-item"></div>
