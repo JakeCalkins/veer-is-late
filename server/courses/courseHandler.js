@@ -18,6 +18,8 @@ function getARR(req, response) {
         // Handle case where student id is not valid
         if (res.rows.length == 0) {
             console.log(`Student with ID ${sid} does not exist`);
+            response.err("ERROR")
+            response.send();
         }
 
         req_report = res.rows[0].arr;
@@ -31,7 +33,7 @@ function getARR(req, response) {
             // [imposes order on query execution]
             promise = promise.then(function() {
                 db.executeQuery(
-                    "SELECT CONCAT(c.major, ' ', c.cnum) as cid " + 
+                    "SELECT DISTINCT c.major, c.cnum " + 
                     "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
                     "WHERE c.cnum = $1 AND c.major = $2 OR (c.major = 'CICS' and c.cnum = $1)", [course.cnum, req_major], function(err, res) {
                         if (err) {
@@ -95,9 +97,11 @@ function getARR(req, response) {
         // Extract the student's upper level electives (400+)
         req_400_electives = req_report.major_requirements.upper_level_electives;
 
-        fetchCourses(req_courses);
-        fetchCourses(req_300_electives);
-        fetchCourses(req_400_electives);
+        //fetchCourses(req_courses);
+        //fetchCourses(req_300_electives);
+        //fetchCourses(req_400_electives);
+
+        var promise = Promise.resolve();
 
         req_courses.forEach(function(course, index, array) {
 
@@ -105,7 +109,7 @@ function getARR(req, response) {
             // [imposes order on query execution]
             promise = promise.then(function() {
                 db.executeQuery(
-                    "SELECT CONCAT(c.major, ' ', c.cnum) as cid " + 
+                    "SELECT DISTINCT c.major, c.cnum " + 
                     "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
                     "WHERE c.cnum = $1 AND c.major = $2 OR (c.major = 'CICS' and c.cnum = $1)", [course.cnum, req_major], function(err, res) {
                         if (err) {
@@ -158,7 +162,7 @@ function getARR(req, response) {
             // [imposes order on query execution]
             promise = promise.then(function() {
                 db.executeQuery(
-                    "SELECT DISTINCT CONCAT(c.major, ' ', c.cnum) as cid " + 
+                    "SELECT DISTINCT c.major, c.cnum " + 
                     "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
                     "WHERE c.cnum like '4%' AND c.major = $1", [req_major], function(err, res) {
                         if (err) {
@@ -168,7 +172,7 @@ function getARR(req, response) {
                             // Handles courses that are not yet in the DB
                             if (res.rows.length == 0) {
                                 console.log("COURSE NOT FOUND IN DATABASE\n")
-                                unsatisfied.push(course.cid);
+                                unsatisfied.push(course.major, course.cnum);
                             } else {
                                 // Determine if course is satisfied and add course information
                                 var courseInfo;
@@ -181,9 +185,9 @@ function getARR(req, response) {
                                     break;
                                 }
                                 if (course.is_satisfied) {
-                                    satisfied.push(courseInfo.cid);
+                                    satisfied.push(courseInfo.major, courseInfo.cnum);
                                 } else {
-                                    unsatisfied.push(courseInfo.cid);
+                                    unsatisfied.push(courseInfo.major, courseInfo.cnum);
                                 }
                                 // Log output to console
                                 if (index == array.length - 1) {
@@ -219,7 +223,7 @@ function getARR(req, response) {
             // [imposes order on query execution]
             promise = promise.then(function() {
                 db.executeQuery(
-                    "SELECT DISTINCT CONCAT(c.major, ' ', c.cnum) as cid " + 
+                    "SELECT DISTINCT c.major, c.cnum " + 
                     "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
                     "WHERE c.cnum like '3%' AND c.major = $1", [req_major], function(err, res) {
                         if (err) {
