@@ -6,6 +6,8 @@ function getARR(req, response) {
     // Retreive studentID from the request's queryString
     var sid = req.query.sid;
 
+    let jsonObj = {}
+
     // Initialize variables to store query results
     let req_report, req_courses;
 
@@ -153,7 +155,7 @@ function getARR(req, response) {
                                         courses: queryResults,
                                         take_immediately: false
                                     },
-                                    required: 3
+                                    required: 9
                                 },
                                 geneds: req_geneds
                             }
@@ -168,7 +170,7 @@ function getARR(req, response) {
                                         courses: queryResults,
                                         take_immediately: false
                                     },
-                                    required: 3
+                                    required: 9
                                 },
                                 geneds: req_geneds
                             });

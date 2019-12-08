@@ -70,28 +70,6 @@
                 "take_immediately": false
             }
         ],
-        "mid_level_electives": [
-            {
-                "cnum": -1,
-                "is_satisfied": false,
-                "take_immediately": false
-            }, 
-            {
-                "cnum": -1,
-                "is_satisfied": false,
-                "take_immediately": false
-            },
-            {
-                "cnum": -1,
-                "is_satisfied": false,
-                "take_immediately": false
-            },
-            {
-                "cnum": -1,
-                "is_satisfied": false,
-                "take_immediately": false
-            }
-        ],
         "gened_requirements": [
            {"DU": 2},
            {"AT": 1},
