@@ -1,5 +1,9 @@
 /* Component for navbar */
 
+.options {
+    margin: 20px auto auto 50px;
+}
+
 .options * {
     display: inline;
     padding: 5px;
@@ -22,4 +26,10 @@
     font-size: 1.7em;
     text-align: center;
     vertical-align: middle;;
+}
+
+.options button:hover {
+    transition: 0.3s;
+    border: 2px solid #881C1C;
+    background-color: rgba(136, 28, 28, 0.055);
 }
