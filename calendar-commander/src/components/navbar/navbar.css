@@ -15,6 +15,7 @@ h3 {
   color: white;
 }
 
+
 #menu-item.menu {
   border: 3px solid white;
   border-radius: 12px;
@@ -38,4 +39,10 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
 }
