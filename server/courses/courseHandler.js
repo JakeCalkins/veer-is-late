@@ -173,6 +173,7 @@ function getARR(req, response) {
                                 geneds: req_geneds
                             });
 
+                            // Writes json data to output file
                             fs.writeFile('./server/courses/output.json', JSON.stringify(jsonObj), 'utf8', function(err) {
                                 if (err) {
                                     console.log(err);
