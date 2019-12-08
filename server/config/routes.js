@@ -7,7 +7,7 @@ module.exports = function(app, express) {
 
     // GET request for schedule processing
     app.get('/api/schedule', function(req, res) {
-        // Use python shell
+        // Use python shell to run shedule builder
         var PythonShell = require('python-shell').PythonShell;
         var pyshell = new PythonShell('/Users/MatthewGimlewicz/Documents/veer-is-late/server/config/test.py');
 
