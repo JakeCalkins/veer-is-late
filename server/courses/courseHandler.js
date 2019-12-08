@@ -45,6 +45,7 @@ function getARR(req, response) {
         // Promise ensures we run queries sequentially
         var promise = Promise.resolve();
 
+        // Determine if required courses have been satisfied
         req_courses.forEach(function(course, index, array) {
 
             // Execute query once promise is resolved
