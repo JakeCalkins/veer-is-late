@@ -1,0 +1,25 @@
+/* Component for navbar */
+
+.options * {
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+}
+
+.option-click {
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+.options .option-icon {
+    height: 30px;
+    vertical-align: middle;
+}
+
+.options .option-title{
+    color: black;
+    font-weight: 100;
+    font-size: 1.7em;
+    text-align: center;
+    vertical-align: middle;;
+}
