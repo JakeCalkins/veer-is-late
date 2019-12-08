@@ -1,0 +1,16 @@
+.schedule-wrappist {
+  border-radius: 12px;
+  background-color: #ECECEC;
+  width: 1323px;
+  height: 772px;
+  margin: 50px auto 50px auto;
+}
+
+h2.schedule-header {
+  padding: 20px;
+}
+
+.schedule-list {
+  margin: auto;
+  width:628px;
+}
