@@ -12,6 +12,7 @@ module.exports = function(app, express) {
                             req.query.firstname,
                             req.query.lastname]);
         
+        console.log("")
         process.stdout.on('data', function(data) {
             console.log(data.toString())
             res.send(data.toString());
