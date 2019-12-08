@@ -36,9 +36,6 @@ function getARR(req, response) {
         // Extract the student's REQUIRED major courses
         req_courses = req_report.major_requirements.courses;
 
-        // Extract the student's upper level electives (300+)
-        req_300_electives = req_report.major_requirements.mid_level_electives;
-
         // Extract the student's upper level electives (400+)
         req_400_electives = req_report.major_requirements.upper_level_electives;
 
@@ -48,6 +45,7 @@ function getARR(req, response) {
         // Promise ensures we run queries sequentially
         var promise = Promise.resolve();
 
+        // Determine if required courses have been satisfied
         req_courses.forEach(function(course, index, array) {
 
             // Execute query once promise is resolved
