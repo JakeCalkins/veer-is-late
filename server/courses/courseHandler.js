@@ -6,8 +6,6 @@ function getARR(req, response) {
     // Retreive studentID from the request's queryString
     var sid = req.query.sid;
 
-    let jsonObj = {}
-
     // Initialize variables to store query results
     let req_report, req_courses;
 
