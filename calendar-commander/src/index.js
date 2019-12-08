@@ -9,4 +9,4 @@ import RequirementsContainer from "./components/requirements_container/Requireme
 import Schedule from "./components/schedule_generator/Schedule";
 import MenuItems from "./components/MenuItems/MenuItems";
 
-ReactDOM.render(<div><NavBar /><MenuItems /><Schedule /></div>, document.getElementById('root'));
+ReactDOM.render(<div><NavBar /> <RequirementsContainer /></div>, document.getElementById('root'));

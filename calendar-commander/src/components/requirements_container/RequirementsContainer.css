@@ -2,7 +2,7 @@
   box-shadow: 0px 0px 20px 12px rgba(167, 167, 167, 0.7);
   border-radius: 12px;
   width: 520px;
-  height: 400px;
+  height: auto;
   margin: auto;
   margin-top: 100px;
   padding: 40px 40px 40px 40px;
@@ -10,37 +10,38 @@
 
 
 #requirements-container .title-header {
-  font-size: 1.6em;
+  font-size: 1.7em;
   letter-spacing: 0px;
   font-weight: 100;
 }
 
-#requirements-container .sub-headers{
+#requirements-container .sub-headers {
   position: relative;
   top: 15px;
   font-weight: 300;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 
-#requirements-container #min-credit-input, #requirements-container #max-credit-input {
+#requirements-container #min-credit-input,
+#requirements-container #max-credit-input {
   border-radius: 12px;
   border: 2px solid black;
   width: 55px;
   height: 29px;
-  font-size: 22px;
+  font-size: 20px;
   padding: 4px;
   text-align: center;
   -webkit-appearance: none;
   font-weight: 200;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-#requirements-container .credit-input-section *{
+#requirements-container .credit-input-section * {
   display: inline;
 }
 
@@ -49,5 +50,128 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1.1em;
   margin-left: 10px;
   margin-right: 10px;
-  color: rgba(1, 1, 1,.8);
+  color: rgba(1, 1, 1, .8);
+}
+
+#requirements-container #time-requirements {
+  height: 100px;
+  border: 2px solid black;
+  width: 85%;
+  border-radius: 12px;
+}
+
+#requirements-container .days-text {
+  font-weight: 100;
+  margin-left: 10px;
+  color: rgb(1, 1, 1);
+  font-size: 1.1em;
+  margin-top: 9px;
+  position: relative;
+  top: 2px;
+}
+
+#requirements-container #time-requirements .day-selection * {
+  display: inline;
+}
+
+
+#requirements-container #time-requirements #time-of-day-requirement * {
+  display: inline;
+}
+
+
+#requirements-container .day-type {
+  border-radius: 12px;
+  border: 1px solid black;
+  width: 30px;
+  height: 29px;
+  font-size: 15px;
+  padding: 4px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  position: relative;
+  top: 2px;
+  margin: 2px;
+}
+
+#requirements-container .before-after-toggle {
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 65px;
+  height: 29px;
+  font-size: 15px;
+  padding: 4px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  position: relative;
+  top: 2px;
+  margin: 2px;
+  margin-left: 10px;
+}
+
+#requirements-container #min-time-input, #requirements-container #max-time-input  {
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 60px;
+  height: 17px;
+  font-size: 15px;
+  padding: 4px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  position: relative;
+  top: 2px;
+  margin: 2px;
+  margin-left: 5px;
+}
+
+#requirements-container #max-time-input {
+  margin-left: 10px;
+}
+
+#requirements-container .toggable-items-false input{
+  border: 2px solid rgba(167, 167, 167, .3) !important;
+}
+
+#requirements-container .toggable-items-false *, #requirements-container .toggable-items-false ::placeholder{
+  color: rgba(167, 167, 167, .3);
+}
+
+
+#requirements-container .toggable-items-true input{
+  border: 2px solid black !important;
+}
+
+#requirements-container .toggable-items-true *, #requirements-container .toggable-items-true ::placeholder{
+  color: rgba(150, 150, 150, 1);
+}
+
+#requirements-container .add-requirement{
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 60%;
+  height: 25px;
+  font-size: 13px;
+  padding: 4px;
+  text-align: center;
+  -webkit-appearance: none;
+  font-weight: 200;
+  position: relative;
+  top: 2px;
+  margin: 2px;
+  margin-left: 5px;
+}
+
+#requirements-container span{
+  position: relative;
+  right: 5px;
+  bottom: 1px;
+}
+
+#requirements-container .add-sign {
+  height: 12px;
+  position: relative;
+  right: 20px;
 }
