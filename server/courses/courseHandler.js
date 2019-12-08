@@ -1,4 +1,5 @@
 var db = require('../../database/db');
+var fs = require('fs')
 
 function getARR(req, response) {
 
@@ -18,7 +19,6 @@ function getARR(req, response) {
         // Handle case where student id is not valid
         if (res.rows.length == 0) {
             console.log(`Student with ID ${sid} does not exist`);
-            response.err("ERROR")
             response.send();
         }
 
@@ -56,7 +56,7 @@ function getARR(req, response) {
 
                 // Executable SQL to pull courses
                 var sql = "SELECT DISTINCT c.major, c.cnum " + 
-                          "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
+                          "FROM Courses c " +
                           "WHERE c.cnum = $1 AND c.major = $2"
                 
                 // If major is SQL also consider CICS courses
@@ -83,7 +83,7 @@ function getARR(req, response) {
                     } else {
 
                         var completed = course.is_satisfied;
-                        
+                
                         // courseInfo = { major, cnum }
                         var courseInformation = res.rows[0];
 
@@ -106,8 +106,8 @@ function getARR(req, response) {
 
                 // Find courses in the major that begin with 400
                 var sql = "SELECT DISTINCT c.major, c.cnum " + 
-                          "FROM Courses c INNER JOIN Professors p ON c.pid = p.pid " +
-                          "WHERE c.cnum like '4%' AND c.major = $1";
+                          "FROM Courses c " +
+                          "WHERE (c.cnum like '4%' AND c.major = $1) OR (c.cnum like '3%' AND c.major = $1)";
 
                 db.executeQuery(sql, [req_major], function(err, res) {
 
@@ -142,7 +142,22 @@ function getARR(req, response) {
                         }
 
                         if (index == array.length - 1) {
-                    
+
+                            let jsonObj = {
+                                required_courses: {
+                                    satisfied: satisfied,
+                                    unsatisfied: unsatisfied
+                                },
+                                upper_level_courses: {
+                                    available: {
+                                        courses: queryResults,
+                                        take_immediately: false
+                                    },
+                                    required: 3
+                                },
+                                geneds: req_geneds
+                            }
+
                             response.json({
                                 required_courses: {
                                     satisfied: satisfied,
@@ -150,13 +165,19 @@ function getARR(req, response) {
                                 },
                                 upper_level_courses: {
                                     available: {
-                                        queryResults,
+                                        courses: queryResults,
                                         take_immediately: false
                                     },
                                     required: 3
                                 },
                                 geneds: req_geneds
                             });
+
+                            fs.writeFile('./server/courses/output.json', JSON.stringify(jsonObj), 'utf8', function(err) {
+                                if (err) {
+                                    console.log(err);
+                                }
+                            })
 
                             response.send()
                         }

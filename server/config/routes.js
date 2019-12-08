@@ -4,6 +4,8 @@ module.exports = function(app, express) {
 
     // GET request for ARR given SID
     app.get('/api/academic', courseHandler.getARR);
+
+    // GET request for schedule processing
     app.get('/api/schedule', function(req, res) {
         var spawn = require ('child_process').spawn;
 
@@ -12,7 +14,6 @@ module.exports = function(app, express) {
                             req.query.firstname,
                             req.query.lastname]);
         
-        console.log("")
         process.stdout.on('data', function(data) {
             console.log(data.toString())
             res.send(data.toString());

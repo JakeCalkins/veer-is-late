@@ -103,9 +103,9 @@
         ]
     },
     "graded_residence_unit_requirement": {
-        "is_satisfied": true,
-        "units_taken": 81,
-        "units_required": 54,
+        "is_satisfied": false,
+        "units_taken": 0,
+        "units_required": 120,
         "units_needed": 0
     }
 }

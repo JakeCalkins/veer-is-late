@@ -4,25 +4,49 @@
         "courses": [
             {
                 "cnum": 100,
-                "is_satisfied": false
+                "is_satisfied": true
+            }, 
+            {
+                "cnum": 110,
+                "is_satisfied": true
+            }, 
+            {
+                "cnum": 150,
+                "is_satisfied": true
+            }, 
+            {
+                "cnum": "195K",
+                "is_satisfied": true
+            },
+            {
+                "cnum": 213,
+                "is_satisfied": true
+            },
+            {
+                "cnum": 350,
+                "is_satisfied": true
             }
         ],
         "upper_level_electives": [
             {
                 "cnum": -1,
-                "is_satisfied": false
+                "is_satisfied": false,
+                "take_immedaitely": true
             }, 
             {
                 "cnum": -1,
-                "is_satisfied": false
+                "is_satisfied": false,
+                "take_immediately": true
             },
             {
                 "cnum": -1,
-                "is_satisfied": false
+                "is_satisfied": false,
+                "take_immediately": true
             },
             {
                 "cnum": -1,
-                "is_satisfied": false
+                "is_satisfied": false,
+                "take_immediately": true
             }
         ]
     },
