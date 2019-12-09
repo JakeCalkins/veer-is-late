@@ -8,5 +8,6 @@ import ProgressContainer from "./components/progress_container/ProgressContainer
 import RequirementsContainer from "./components/requirements_container/RequirementContainers";
 import Schedule from "./components/schedule_generator/Schedule";
 import MenuItems from "./components/MenuItems/MenuItems";
+import Mercenaries from './components/ScheduleMercenaries/ScheduleMercenaries';
 
-ReactDOM.render(<div><NavBar /> <RequirementsContainer /></div>, document.getElementById('root'));
+ReactDOM.render(<div><NavBar /> <Mercenaries /></div>, document.getElementById('root'));
