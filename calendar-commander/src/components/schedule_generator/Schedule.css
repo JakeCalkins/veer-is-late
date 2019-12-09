@@ -1,9 +1,13 @@
 .schedule-wrappist {
   border-radius: 12px;
   background-color: #ECECEC;
-  width: 1323px;
-  height: 772px;
+  width: 1200px;
+  height: auto;
   margin: 50px auto 50px auto;
+}
+
+.schedule-wrappist > div{
+  display: inline-block;
 }
 
 h2.schedule-header {
@@ -12,5 +16,12 @@ h2.schedule-header {
 
 .schedule-list {
   margin: auto;
-  width:628px;
+  width:500px;
+  float: left;
 }
+
+.schedule-list .Mercenaries{
+  margin: 5px auto;
+}
+
+

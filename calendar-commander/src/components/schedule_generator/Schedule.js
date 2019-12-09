@@ -1,6 +1,9 @@
 import React from 'react';
 import './Schedule.css';
+import Mercenaries from '../ScheduleMercenaries/ScheduleMercenaries'
 // import ScheduleMercenaries from './components/ScheduleMercenaries/ScheduleMercenaries';
+import DetailsPane from "../DetailsPane/DetailsPane"
+
 
 class Schedule extends React.Component {
   render() {
@@ -9,8 +12,12 @@ class Schedule extends React.Component {
         <div class="schedule-wrappist">
           <h2 class="schedule-header">Generated Schedules (X results)</h2>
           <div class="schedule-list">
-            <span id="for number of schedules in scheduleJSON:
-             render a <ScheduleMercenaries /> for each one">Check the span ID attribute for the pseudocode of what I wanna do.</span>
+            <Mercenaries></Mercenaries>
+            <Mercenaries></Mercenaries>
+            <Mercenaries></Mercenaries>
+          </div>
+          <div class="calender-contain">
+            <DetailsPane></DetailsPane>
           </div>
         </div>
       </div>

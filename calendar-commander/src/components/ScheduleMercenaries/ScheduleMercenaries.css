@@ -2,6 +2,7 @@
     border: 1px solid black;
     width: 375px;
     height: 125px;
+    background-color: white;
 }
 
 .course-header * {
