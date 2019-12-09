@@ -1,0 +1,80 @@
+{
+    "major_requirements": {
+        "major": "COMPSCI",
+        "courses": [
+            {
+                "cnum": 121,
+                "is_satisfied": true
+            },
+            {
+                "cnum": 187,
+                "is_satisfied": true
+            },
+            {
+                "cnum": 220,
+                "is_satisfied": true
+            },
+            {
+                "cnum": 230,
+                "is_satisfied": false,
+                "take_immediately": true
+            },
+            {
+                "cnum": 240,
+                "is_satisfied": false,
+                "take_immediately": true
+            },
+            {
+                "cnum": 250,
+                "is_satisfied": true
+            },
+            {
+                "cnum": 305,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 311,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 326,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": 377,
+                "is_satisfied": false,
+                "take_immediately": false
+            }
+        ],
+        "upper_level_electives": [
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            }, 
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            },
+            {
+                "cnum": -1,
+                "is_satisfied": false,
+                "take_immediately": false
+            }
+        ],
+        "gened_requirements": [
+           {"DU": 2},
+           {"PS": 2}
+        ]
+    },
+    "graded_residence_unit_requirement": {
+        "is_satisfied": false,
+        "units_taken": 55,
+        "units_required": 120,
+        "units_needed": 0
+    }
+}

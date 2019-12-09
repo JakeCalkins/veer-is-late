@@ -50,8 +50,7 @@
             }
         ],
         "gened_requirements": [
-            {"AT": 1},
-            {"AL": 1}
+            {"AT": 4}
          ]
     },
     "graded_residence_unit_requirement": {

@@ -1,4 +1,5 @@
 var courseHandler = require('../courses/courseHandler');
+var fs = require('fs')
 
 module.exports = function(app, express) {
 
@@ -7,20 +8,17 @@ module.exports = function(app, express) {
 
     // GET request for schedule processing
     app.get('/api/schedule', function(req, res) {
-        // Use python shell to run shedule builder
-        var PythonShell = require('python-shell').PythonShell;
-        var pyshell = new PythonShell('/Users/MatthewGimlewicz/Documents/veer-is-late/server/courses/scheduleHandler.py', {args: ['Matt', 'G']});
-
-        pyshell.on('message', function (message) {
-            // received a message sent from the Python script (a simple "print" statement)
-            console.log(message);
-        });
-
-        // end the input stream and allow the process to exit
-        pyshell.end(function (err) {
-            if (err){
-                console.log(err);
-            };
+        console.log("Received GET request to run Python script\n");
+        const { spawn } = require('child_process');
+        const pyProg = spawn('python', ['./server/generate.py']);
+        pyProg.on('exit', function() {
+            console.log('FINISHED\n')
+            fs.readFile('generated_schedules.txt', 'utf8', function(err, data){
+                    // console.log(data); //OK
+                    data = JSON.parse(data);
+                    res.json(data);
+                    res.send();
+            });
         });
     });
 

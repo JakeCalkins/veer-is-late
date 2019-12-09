@@ -1,6 +1,7 @@
 import React from 'react';
 import './StudentID.css';
 import submit_button from './submit_triangle.png';
+import updateView from '../../index.js';
 
 class StudentID extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class StudentID extends React.Component {
             var sid = document.getElementsByTagName("input")[0].value;
             xhr.open('GET', 'http://localhost:1337/api/academic?sid=' + sid, true);
             xhr.send();
+            updateView();
           }}/></button>
         </form>
       </div>

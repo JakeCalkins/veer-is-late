@@ -4,7 +4,8 @@ var fs = require('fs')
 function getARR(req, response) {
 
     // Retreive studentID from the request's queryString
-    var sid = req.query.sid;
+    console.log(req.query)
+    var sid = parseInt(req.query.sid);
 
     // Initialize variables to store query results
     let req_report, req_courses;

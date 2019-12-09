@@ -184,6 +184,35 @@ def generate(arr_dir, credits_min, credits_max, num_schedules):
                             already_added_courses.append(newclass)
                 schedules_list.append(new_sched)
             
+            outdict = {}
+            for i in range(num_schedules):
+                #print(schedules_list[i])
+                outdict[i] = {}
+                for j in range(len(schedules_list[i])):
+                    outdict[i][j] = {}
+                    outdict[i][j]["cnum"] = schedules_list[i][j][0] 
+                    outdict[i][j]["cname"] = schedules_list[i][j][1] 
+                    outdict[i][j]["credits"] = schedules_list[i][j][2] 
+                    outdict[i][j]["pid"] = schedules_list[i][j][3] 
+                    outdict[i][j]["lid"] = schedules_list[i][j][4]
+                    outdict[i][j]["honors"] = schedules_list[i][j][5] 
+                    outdict[i][j]["location"] = schedules_list[i][j][6] 
+                    outdict[i][j]["gened"] = schedules_list[i][j][7] 
+                    outdict[i][j]["major"] = schedules_list[i][j][8] 
+                    outdict[i][j]["prereqs"] = schedules_list[i][j][9] 
+                    outdict[i][j]["time_of_day"] = schedules_list[i][j][10]
+                    outdict[i][j]["type"] = schedules_list[i][j][11]
+
+                #print(outdict[temp])
+                
+            with open('generated_schedules.txt', 'w') as outfile:
+                json.dump(outdict, outfile)
+
+            print("outputed schedule to generated_schedules.txt in json format")
+            
+
+
+
             return schedules_list
 
 
@@ -199,4 +228,4 @@ def generate(arr_dir, credits_min, credits_max, num_schedules):
             print("\nDatabase connection closed\n")
 
 if __name__ == "__main__":
-    print(generate("server/courses/output.json", 14, 18, 3))
+    generate("server/courses/output.json", 14, 18, 3)

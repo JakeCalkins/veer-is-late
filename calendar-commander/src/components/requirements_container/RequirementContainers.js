@@ -1,6 +1,7 @@
 import React from 'react';
 import "./RequirementsContainer.css"
 import add_icon from "../MenuItems/addIcon.png"
+import updateView from '../../index.js';
 
 class RequirementsContainer extends React.Component {
   render() {
@@ -83,7 +84,13 @@ class RequirementsContainer extends React.Component {
               </div>
           </div>
           <div class="forthebutton">
-            <button id="generate">Generate!</button>
+            <button id="generate" onClick={function() {
+              var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'http://localhost:1337/api/schedule', true);
+              xhr.send();
+              updateView();
+            }}>Generate!</button>
           </div>
           <div class="circles">
             <div class="circle"></div>
