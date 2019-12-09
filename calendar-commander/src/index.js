@@ -13,3 +13,28 @@ import DetailsPane from './components/DetailsPane/DetailsPane';
 
 // ReactDOM.render(<div><NavBar /> <MenuItems/><Schedule /></div>, document.getElementById('root'));
 ReactDOM.render(<div><NavBar /> <StudentID/></div>, document.getElementById('root'));
+
+let updateView = function() {
+    x++;
+    if (x == 3) {
+        visibleView = (
+            <div>
+                <NavBar />
+                <RequirementsContainer />
+            </div>
+        );
+    }
+    if (x == 4) {
+        visibleView = (
+            <div>
+                <NavBar />
+                <MenuItems />
+                <Schedule />
+            </div>
+        );
+    }
+    // Render to the DOM
+ReactDOM.render(visibleView, document.getElementById('root'));
+}
+
+export default updateView;
