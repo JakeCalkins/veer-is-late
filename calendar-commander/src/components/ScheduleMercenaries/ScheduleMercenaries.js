@@ -27,8 +27,20 @@ class Mercenaries extends React.Component {
                     <img src={seminar}></img>
                 </div>
                 <div class="vl">
-                    YES
                 </div>
+                <div class="course-classes">
+                    <ul class="col col1">
+                        <li>RIC 556</li>
+                        <li>CS 344</li>
+                        <li>PB 523</li>
+                    </ul>
+                    <ul class="col col2">
+                        <li>CNA 321</li>
+                    </ul>
+                    <ul class="col col3">
+                        <li>MS 203</li>
+                    </ul>
+                    </div>
             </div>
           </div>
       </div>
