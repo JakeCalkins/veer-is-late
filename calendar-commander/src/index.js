@@ -8,5 +8,6 @@ import ProgressContainer from "./components/progress_container/ProgressContainer
 import RequirementsContainer from "./components/requirements_container/RequirementContainers";
 import Schedule from "./components/schedule_generator/Schedule";
 import MenuItems from "./components/MenuItems/MenuItems";
+import DetailsPane from './components/DetailsPane/DetailsPane';
 
-ReactDOM.render(<div><NavBar /> <RequirementsContainer /></div>, document.getElementById('root'));
+ReactDOM.render(<div class="timetable"><DetailsPane /></div>, document.getElementById('root'));
