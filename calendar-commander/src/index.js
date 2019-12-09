@@ -36,3 +36,28 @@ if(x != 1) {
 
 // Render to the DOM
 ReactDOM.render(visibleView, document.getElementById('root'));
+
+let updateView = function() {
+    x++;
+    if (x == 3) {
+        visibleView = (
+            <div>
+                <NavBar />
+                <RequirementsContainer />
+            </div>
+        );
+    }
+    if (x == 4) {
+        visibleView = (
+            <div>
+                <NavBar />
+                <MenuItems />
+                <Schedule />
+            </div>
+        );
+    }
+    // Render to the DOM
+ReactDOM.render(visibleView, document.getElementById('root'));
+}
+
+export default updateView;
