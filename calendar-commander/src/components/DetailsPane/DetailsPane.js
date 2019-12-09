@@ -42,7 +42,22 @@ class DetailsPane extends React.Component {
   render() {
     return (
       <div className="DetailsPane">
-          <Timetable events={this.state.events}/>
+          <div class="pane">
+            <div class="i-hate-this-module">
+                <Timetable id="timetable-table-of-time" events={this.state.events}/>
+            </div>
+            <div class="detail-view">
+                <h2>Courses</h2>
+                <h3>18 credits | 4 courses</h3>
+                <div id="course-list">
+                    <ul>
+                        <li>Course</li>
+                        <li>Course</li>
+                        <li>Course</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
       </div>
     );
   }
