@@ -7,21 +7,9 @@ module.exports = function(app, express) {
 
     // GET request for schedule processing
     app.get('/api/schedule', function(req, res) {
-        // Use python shell to run shedule builder
+        // Use python shell to run shedule builder script
         var PythonShell = require('python-shell').PythonShell;
-        var pyshell = new PythonShell('/Users/MatthewGimlewicz/Documents/veer-is-late/server/courses/scheduleHandler.py', {args: ['Matt', 'G']});
-
-        pyshell.on('message', function (message) {
-            // received a message sent from the Python script (a simple "print" statement)
-            console.log(message);
-        });
-
-        // end the input stream and allow the process to exit
-        pyshell.end(function (err) {
-            if (err){
-                console.log(err);
-            };
-        });
+        var pyshell = new PythonShell('/Users/MatthewGimlewicz/Documents/veer-is-late/server/generator.py');
     });
 
 };
