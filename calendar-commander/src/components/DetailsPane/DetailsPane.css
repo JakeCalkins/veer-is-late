@@ -1,0 +1,19 @@
+.pane {
+    background-color: #003B5C;
+    border-radius: 12px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0px 0px 20px 12px rgba(167,167,167,0.7);
+    margin: 20px;
+    width: 580px;
+    height: 620px;
+}
+.i-hate-this-module {
+    height: 450px;
+}
+
+.styles_time_table_wrapper__1-rtp {
+    width: 574px;
+    overflow: scroll!important;
+    border-radius: 12px!important;
+}
