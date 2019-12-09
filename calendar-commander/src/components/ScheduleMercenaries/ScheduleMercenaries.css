@@ -1,15 +1,15 @@
-.course-details{
+#course-details-container.course-details{
     border: 1px solid black;
     width: 375px;
     height: 125px;
     background-color: white;
 }
 
-.course-header * {
+#course-details-container .course-header * {
     display: inline;
 }
 
-.course-header h1 {
+#course-details-container .course-header h1 {
     font-size:  .9em;
     letter-spacing: 0px;
     margin-left: 15px;
@@ -17,34 +17,34 @@
     vertical-align: middle;
 }
 
-.course-header h1 span.num {
+#course-details-container .course-header h1 span.num {
     font-weight: bold;
     font-size: 1em;
     color: rgb(100, 100, 100);
 }
 
-.course-header h1:first-child {
+#course-details-container .course-header h1:first-child {
     letter-spacing: 0px;
     margin-left: 5px;
     margin-right: 5px;
     color: black;
 }
 
-.breaker{
+#course-details-container .breaker{
     border: .3px solid rgba(0, 0, 0, .2);
     width: 97%;
     border-style: solid !important;
 }
-.course-body {
+#course-details-container .course-body {
     display: flex;
 }
 
-.course-details .course-icons {
+#course-details-container.course-details .course-icons {
     display: inline-grid;
     margin-left: 10px;
     margin-right: 10px;
 }
-.course-details .course-icons img{
+#course-details-container.course-details .course-icons img{
     width: 25px;
     height: 25px;
     margin-top: 0px;
@@ -53,27 +53,27 @@
 }
 
 
-.vl{
+#course-details-container .vl{
     display: inline-flex;
     width: 0px;
     border: .3px solid rgba(0, 0, 0, .2);
 }
 
-.course-body .course-classes{
+#course-details-container .course-body .course-classes{
     display: inline-grid;
 }
 
-.course-body .course-classes *{
+#course-details-container .course-body .course-classes *{
     display: inline;
 }
-.course-classes .col{
+#course-details-container .course-classes .col{
     display: inline;
     list-style-type: none;
     padding: 0;
     margin: 0 2px;
 }
 
-.course-classes .col li{
+#course-details-container .course-classes .col li{
     padding: 3px 3px 3px 10px;
     font-weight: 100;
     font-size: 1.2em;

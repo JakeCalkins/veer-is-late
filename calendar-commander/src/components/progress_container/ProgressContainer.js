@@ -6,7 +6,7 @@ class ProgressContainer extends React.Component {
   render() {
       return (
       <div className="ProgressContainer">
-        <div class="wrappist">
+        <div class="wrappist" id="progress-container">
           <div class="header-text">
             <h2>Pulling your academic requirements report...</h2>
           </div>

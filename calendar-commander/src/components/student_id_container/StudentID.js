@@ -6,7 +6,7 @@ class StudentID extends React.Component {
   render() {
       return (
       <div className="StudentID">
-        <div class="wrappist">
+        <div class="wrappist" id="student-id-container">
         <div class="header-text"><h2>Enter your Student ID</h2></div>
         <form action="/requirements-aquisiton.html">
           <input type="text" name="SID" placeholder="8 digits" pattern="^[0-9]*$" maxLength="8"/>

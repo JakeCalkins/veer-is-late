@@ -1,36 +1,49 @@
 /* Progress container */
 
-.wrappist {
+#progress-container .wrappist {
   box-shadow: 0px 0px 20px 12px rgba(167, 167, 167, 0.7);
   border-radius: 12px;
-  width: 520px;
-  height: 520px;
+  width: 800px !important;
+  height: 462px !important;
   margin: auto;
-  margin-top: 100px;
-  padding: 40px 40px 40px 40px;
+  margin-top: 50px;
+  padding: 40px 40px 10px 40px;
+  margin-bottom: 30px;
 }
 
-h2 {
-  font-size: 2rem;
+#progress-container .header-text {
+  width: 300px;
 }
 
-.illustration {
+#progress-container h2 {
+  font-size: 2.3rem;
+  font-weight: 100;
+  position: relative;
+  bottom: -65px;
+  left: 143px;
+}
+
+#progress-container .illustration {
   height: 183px;
-  margin-right: auto;
-  margin-left: auto;
+  /* margin-right: auto; */
+  margin-left: 492px;
+  bottom: 128px;
+  position: relative;
 }
 
 /* CSS LOADER ANIMATION */
-.loader {
+#progress-container .loader {
   margin-left: auto;
   margin-right: auto;
-  width: 3rem;
-  height: 3rem;
+  width: 25rem;
+  height: 25rem;
   border-top: 5px solid #881c1c;
-  border-right: 5px solid transparent;
+  border-right: 5px solid #881c1c00;
   border-radius: 50%;
-  -webkit-animation: rotation 1s linear infinite;
-          animation: rotation 1s linear infinite;
+  position: relative;
+  bottom: 443px;
+  right: 180px;
+  animation: rotation 2s linear infinite;
 }
 
 @keyframes rotation{
@@ -39,13 +52,15 @@ h2 {
 }
 
 /* NAVIGATION CIRCLES */
-.circles {
+#progress-container .circles {
   margin-left: auto;
   margin-right: auto;
   width: 2.9rem;
+  position: relative;
+  bottom: 385px;
 }
 
-.circle {
+#progress-container .circle {
   height: 0.5rem;
   width: 0.5rem;
   background-color: white;
@@ -55,6 +70,6 @@ h2 {
   margin: 0.1rem;
 }
 
-#current-item.circle {
+#progress-container #current-item.circle {
   background-color: #000;
 }

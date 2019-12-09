@@ -3,7 +3,7 @@
     border-radius: 12px;
     padding: 30px;
     color: white;
-    box-shadow: 0px 0px 20px 12px rgba(167,167,167,0.7);
+    /* box-shadow: 0px 0px 20px 12px rgba(167,167,167,0.7); */
     margin: 20px;
     width: 580px;
     height: 620px;
@@ -17,3 +17,77 @@
     overflow: scroll!important;
     border-radius: 12px!important;
 }
+
+.detail-view > *{
+    display: inline;
+}
+
+.detail-view h3 {
+    font-size: .7em;
+    margin-left: 20px;
+    letter-spacing: 2px;
+}
+
+.course-info-panel {
+    margin-top: 20px;
+    height: 150px;
+}
+
+#course-list {
+    background-color: white;
+    color: black;
+    padding: 5px 0px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+#course-list .listing {
+    list-style-type: none;
+    font-size: 1.0em;
+    line-height: 25px;
+    margin-top: 2px;
+    padding-left: 5px;
+}
+
+#course-list .listing .course-name{
+    padding-left: 20px;
+}
+
+#course-list .listing .instructor{
+    padding-left: 68px;
+}
+
+#course-list .listing .credit-amount{
+    float: right;
+    padding-right: 15px;
+}
+
+.course-listings {
+    border-collapse: separate;
+    margin-left: 10px;
+}
+
+
+.course-listings td{
+    padding-bottom: 10px;
+    font-size: .8em;
+}
+
+.course-listings #detail-cnum{
+    width: 100px;
+}
+
+.course-listings #detail-ctitle{
+    width: 300px;
+}
+
+.course-listings #detail-cinstruct{
+    width: 200px;
+}
+.course-listings #detail-ccredit{
+    width: 100px;
+}
+
+
+

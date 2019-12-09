@@ -1,27 +1,51 @@
-.schedule-wrappist {
-  border-radius: 12px;
+#schedule-container.schedule-wrappist {
+  border-radius: 30px;
   background-color: #ECECEC;
   width: 1200px;
-  height: auto;
+  height: 750px;
   margin: 50px auto 50px auto;
+  z-index: 1;
 }
 
-.schedule-wrappist > div{
+#schedule-container.schedule-wrappist > div{
   display: inline-block;
 }
 
-h2.schedule-header {
-  padding: 20px;
+#schedule-container h2.schedule-header {
+  font-weight: 200;
+  margin-left: 30px;
+  padding-top: 30px;
+  font-size: 1.9em;
 }
 
-.schedule-list {
-  margin: auto;
-  width:500px;
+#schedule-container .schedule-list {
+  width: auto;
   float: left;
+  margin-right: 0px;
+  margin-left: 30px;
+  padding-right: 0px;
 }
 
-.schedule-list .Mercenaries{
-  margin: 5px auto;
+#schedule-container .schedule-list .Mercenaries{
+  margin: 10px auto;
 }
 
+#schedule-container .schedule-list .Mercenaries:hover{
+  transition-duration: .2s;
+  box-shadow: 5px 5px  #881c1c;
+}
 
+#schedule-container .calender-contain{
+  float: right;
+  position: relative;
+  bottom: 91px;
+  background-color: #003B5C;
+  height: 100%;
+}
+
+#schedule-container #selected-course {
+  width: 430px;
+  height: 145px;
+  position: absolute;
+  right: 390px;
+}

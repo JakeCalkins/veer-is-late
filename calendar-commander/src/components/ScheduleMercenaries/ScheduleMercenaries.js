@@ -9,7 +9,7 @@ class Mercenaries extends React.Component {
  render() {
     return (
       <div className = "Mercenaries">
-          <div class="course-details">
+          <div class="course-details" id="course-details-container">
             <div class="course-header">
                 <h1 class="credit-count">15 credits</h1>
                 <h1 class="class-count">
