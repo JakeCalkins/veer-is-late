@@ -250,11 +250,19 @@ class RequirementsContainer extends React.Component {
 
               console.log(request, "THIS IS A REQUEST");
 
+              // HTTP request to run requirements builder
               var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
               var xhr = new XMLHttpRequest();
               console.log(maxCredits + "this is a value");
               xhr.open('GET', request, true);
               xhr.send(); 
+
+              // HTTP request to run the schedule builder
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', "http://localhost:1337/api/schedule", true);
+              xhr.send(); 
+              updateView();
+
               updateView();
             //   var obj = {
             //     table: []
