@@ -52,11 +52,11 @@ function Mercenaries(props) {
   //totals
   for(classes in data) {
     credits += data[classes].credits;
-    classes ++;
+    classes++;
     if(data[classes].major === "COMPSCI") {
-      credits += data[classes].credits;
+      inMajor++;
     } else {
-      credits += data[classes].credits;
+      outMajor++;
     }
   }
 
