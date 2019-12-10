@@ -1,4 +1,5 @@
 var courseHandler = require('../courses/courseHandler');
+var inputHandler = require('../courses/inputHandler');
 var fs = require('fs')
 
 module.exports = function(app, express) {
@@ -20,6 +21,14 @@ module.exports = function(app, express) {
                     res.send();
             });
         });
+    });
+
+    app.get('/api/test', inputHandler.getCredits)
+
+     // GET request for user requirements
+     app.get('/api/userrequirements', function(req, res) {
+        console.log("Received GET request for user requirements\n");
+        const { spawn } = require('child_process');
     });
 
 };

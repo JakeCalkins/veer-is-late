@@ -12,7 +12,27 @@ import Mercenaries from './components/ScheduleMercenaries/ScheduleMercenaries';
 import DetailsPane from './components/DetailsPane/DetailsPane';
 
 // ReactDOM.render(<div><NavBar /> <MenuItems/><Schedule /></div>, document.getElementById('root'));
-ReactDOM.render(<div><NavBar /> <StudentID/></div>, document.getElementById('root'));
+ ReactDOM.render(<div><NavBar /> <StudentID/></div>, document.getElementById('root'));
+
+let visibleView = (
+    <div>
+        <NavBar />
+        <MenuItems />
+        <Schedule />
+        <RequirementsContainer />
+        <StudentID />
+    </div>
+); //default state
+
+let x = 2
+if(x != 1) {
+    visibleView = (
+        <div>
+            <NavBar />
+            <StudentID />
+        </div>
+    );
+}
 
 let updateView = function() {
     x++;

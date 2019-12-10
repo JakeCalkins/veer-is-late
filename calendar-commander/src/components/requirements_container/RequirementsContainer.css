@@ -9,6 +9,9 @@
   margin-bottom: 30px;
 }
 
+button:focus {
+  outline: none;
+}
 
 #requirements-container .title-header {
   font-size: 1.7em;

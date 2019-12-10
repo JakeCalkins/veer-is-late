@@ -4,6 +4,148 @@ import add_icon from "../MenuItems/addIcon.png"
 import updateView from '../../index.js';
 
 class RequirementsContainer extends React.Component {
+
+
+  constructor(props){
+    super(props);
+
+    this.state = { 
+      monday: true,
+      tuesday: true,
+      wednesday: true,
+      thursday: true,
+      friday: true,
+
+      honors: true,
+      online: true,
+      seminar: true
+     }
+
+      this.onClickButtonMonday = this.onClickButtonMonday.bind(this);
+      this.onClickButtonTuesday = this.onClickButtonTuesday.bind(this);
+      this.onClickButtonWednesday = this.onClickButtonWednesday.bind(this);
+      this.onClickButtonThursday = this.onClickButtonThursday.bind(this);
+      this.onClickButtonFriday = this.onClickButtonFriday.bind(this);
+
+      this.onClickThesisButton = this.onClickThesisButton.bind(this);
+      this.onClickOnlineButton = this.onClickOnlineButton.bind(this);
+      this.onClickSeminarButton = this.onClickSeminarButton.bind(this);
+
+  }
+
+  onClickButtonMonday(event) {
+    this.setState({monday: !this.state.monday});
+    console.log(this.state.monday);
+    var m = document.getElementsByClassName("day-type monday")[0]
+    m.value = this.state.monday;
+    if(this.state.monday){
+      m.style.color = "white";
+      m.style["border-color"] = "white";
+      m.style["background-color"] = "#881c1c";
+    } else {
+      m.style.color = "black";
+      m.style["border-color"] = "black";
+      m.style["background-color"] = "white";
+    }
+  }
+
+  onClickButtonTuesday(event) {
+    this.setState({tuesday: !this.state.tuesday})
+    console.log(this.state.tuesday);
+    var m = document.getElementsByClassName("day-type tuesday")[0]
+    m.value = this.state.tuesday;
+    if(this.state.tuesday){
+      m.style.color = "white";
+      m.style["border-color"] = "white";
+      m.style["background-color"] = "#881c1c";
+    } else {
+      m.style.color = "black";
+      m.style["border-color"] = "black";
+      m.style["background-color"] = "white";
+    }
+  }
+
+  onClickButtonWednesday(event) {
+    this.setState({wednesday: !this.state.wednesday})
+    console.log(this.state.wednesday);
+    var m = document.getElementsByClassName("day-type wednesday")[0]
+    m.value = this.state.wednesday;
+    if(this.state.wednesday){
+      m.style.color = "white";
+      m.style["border-color"] = "white";
+      m.style["background-color"] = "#881c1c";
+    } else {
+      m.style.color = "black";
+      m.style["border-color"] = "black";
+      m.style["background-color"] = "white";
+    }
+  }
+
+  onClickButtonThursday(event) {
+    this.setState({thursday: !this.state.thursday})
+    console.log(this.state.thursday);
+    var m = document.getElementsByClassName("day-type thursday")[0]
+    m.value = this.state.thursday;
+    if(this.state.thursday){
+      m.style.color = "white";
+      m.style["border-color"] = "white";
+      m.style["background-color"] = "#881c1c";
+    } else {
+      m.style.color = "black";
+      m.style["border-color"] = "black";
+      m.style["background-color"] = "white";
+    }
+  }
+
+  onClickButtonFriday(event) {
+    this.setState({friday: !this.state.friday})
+    console.log(this.state.friday);
+    var m = document.getElementsByClassName("day-type friday")[0]
+    m.value = this.state.friday;
+    if(this.state.friday){
+      m.style.color = "white";
+      m.style["border-color"] = "white";
+      m.style["background-color"] = "#881c1c";
+    } else {
+      m.style.color = "black";
+      m.style["border-color"] = "black";
+      m.style["background-color"] = "white";
+    }
+  }
+
+  onClickThesisButton(event){
+    this.setState({honors: !this.state.honors})
+    var m = document.getElementsByClassName("honors-selection")[0]
+    m.value = this.state.honors;
+    if(this.state.honors){
+      m.style["background-color"] = "white"
+    } else {
+      m.style["background-color"] = "#881c1c";
+    }
+  }
+
+  onClickOnlineButton(event){
+    this.setState({online: !this.state.online})
+    var m = document.getElementsByClassName("online-selection")[0]
+    m.value = this.state.online;
+    if(this.state.online){
+      m.style["background-color"] = "white"
+    } else {
+      m.style["background-color"] = "#881c1c";
+    }
+  }
+
+  onClickSeminarButton(event){
+    this.setState({seminar: !this.state.seminar})
+    var m = document.getElementsByClassName("independent-selection")[0]
+    m.value = this.state.seminar;
+    if(this.state.seminar){
+      m.style["background-color"] = "white"
+    } else {
+      m.style["background-color"] = "#881c1c";
+    }
+  }
+
   render() {
     return (
       <div id="requirements-container">
@@ -20,11 +162,11 @@ class RequirementsContainer extends React.Component {
           <div id="time-requirements">
             <div class="day-selection">
               <p class="days-text">On these days: </p>
-              <button class="day-type">M</button>
-              <button class="day-type">T</button>
-              <button class="day-type">W</button>
-              <button class="day-type">T</button>
-              <button class="day-type">F</button>
+              <button class="day-type monday" value="false" onClick={this.onClickButtonMonday} >M</button>
+              <button class="day-type tuesday" value="false" onClick={this.onClickButtonTuesday}>T</button>
+              <button class="day-type wednesday" value="false" onClick={this.onClickButtonWednesday}>W</button>
+              <button class="day-type thursday" value="false" onClick={this.onClickButtonThursday}>T</button>
+              <button class="day-type friday" value="false" onClick={this.onClickButtonFriday}>F</button>
             </div>
             <div id="time-of-day-requirement">
               <p class="days-text">Avoid times</p>
@@ -44,11 +186,11 @@ class RequirementsContainer extends React.Component {
           </div>
           <div class="option-list">
             <div class="option">
-              <button class="honors-selection"></button>
+              <button class="honors-selection" value="false" onClick={this.onClickThesisButton}></button>
               <h1>Honors thesis?</h1>
             </div>
             <div class="option">
-              <button class="online-selection"></button>
+              <button class="online-selection" value="false" onClick={this.onClickOnlineButton}></button>
               <h1>Online courses?</h1>
               <span class="side-option-false">
                 <h1>How many maximum?</h1>
@@ -56,7 +198,7 @@ class RequirementsContainer extends React.Component {
               </span>
             </div>
             <div class="option">
-              <button class="independent-selection"></button>
+              <button class="independent-selection" value="false" onClick={this.onClickSeminarButton}></button>
               <h1>Independent study?</h1>
               <span class="side-option-false">
                 <h1>How many maximum?</h1>
@@ -85,11 +227,42 @@ class RequirementsContainer extends React.Component {
           </div>
           <div class="forthebutton">
             <button id="generate" onClick={function() {
+
+              var minCredits = document.getElementById("min-credit-input").value;
+              var maxCredits = document.getElementById("max-credit-input").value;
+
+              var monday = document.getElementsByClassName("monday")[0].value;
+              var tuesday = document.getElementsByClassName("tuesday")[0].value;
+              var wednesday = document.getElementsByClassName("wednesday")[0].value;
+              var thursday = document.getElementsByClassName("thursday")[0].value;
+              var friday = document.getElementsByClassName("friday")[0].value;
+
+              var honors = document.getElementsByClassName("honors-selection")[0].value;
+              var online = document.getElementsByClassName("online-selection")[0].value;
+              var independent = document.getElementsByClassName("independent-selection")[0].value;
+
+              var major_classes = document.getElementById("course-class-input").value;
+              var seminar_classes = document.getElementById("seminar-class-input").value;
+
+              var request = 'http://localhost:1337/api/test?mincredits='+minCredits+'&maxcredits=' + maxCredits
+              + '&m=' + monday + '&t=' + tuesday + '&w=' + wednesday + '&th=' + thursday + '&f=' + friday + '&honors=' +
+              honors + '&online=' + online + '&independent=' + independent + '&majclass=' + major_classes + '&sem=' + seminar_classes;
+
+              console.log(request, "THIS IS A REQUEST");
+
               var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
               var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'http://localhost:1337/api/schedule', true);
-              xhr.send();
+              console.log(maxCredits + "this is a value");
+              xhr.open('GET', request, true);
+              xhr.send(); 
               updateView();
+            //   var obj = {
+            //     table: []
+            //  };
+            //  obj.table.push({min: minCredits, max: maxCredits});
+            //  var json = JSON.stringify(obj);
+            //  var fs = require('fs');
+            //  fs.writeFile("../../../../server/courses/settings.json", json, 'utf8');
             }}>Generate!</button>
           </div>
           <div class="circles">
