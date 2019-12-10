@@ -11,7 +11,7 @@ class StudentID extends React.Component {
         <div class="header-text"><h2>Enter your Student ID</h2></div>
         <form action="/requirements-aquisiton.html">
           <input type="text" name="SID" placeholder="8 digits" pattern="^[0-9]*$" maxLength="8"/>
-          <button type="submit"><img src={submit_button} onClick={function() {
+          <button type="submit"><img src={submit_button}  alt = "submit arrow" onClick={function() {
             var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
             var xhr = new XMLHttpRequest();
             var sid = document.getElementsByTagName("input")[0].value;

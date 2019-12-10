@@ -3,9 +3,67 @@ import './Schedule.css';
 import Mercenaries from '../ScheduleMercenaries/ScheduleMercenaries'
 // import ScheduleMercenaries from './components/ScheduleMercenaries/ScheduleMercenaries';
 import DetailsPane from "../DetailsPane/DetailsPane"
-import arrow from "./detailSelector.png"
+import output from "./output.js"
+import ReactDOM from 'react-dom'
 
 class Schedule extends React.Component {
+  componentDidMount() {
+
+      var mercs = document.getElementsByClassName("Mercenaries");
+
+      var jsonObject = JSON.parse(output);
+      for (var schedule in jsonObject) {
+        console. log("Schedule: " + (parseInt(schedule) + 1));
+        var totalCredits = 0;
+        var totalClasses = 0;
+        if (jsonObject.hasOwnProperty(schedule)) {
+          var val = jsonObject[schedule];
+          for (var course_count in val) {
+            var course = val[course_count]
+            var cnum = course["cnum"];
+            var major = course["major"];
+            totalCredits = totalCredits + parseInt(course["credits"]);
+            totalClasses++;
+          
+            var colplease = mercs[schedule].getElementsByClassName("num" + (parseInt(course_count) + 1))[0];
+            colplease.innerHTML = major + " " + cnum;
+
+
+          }
+        }
+
+        var ccount = mercs[schedule].getElementsByClassName("credit-count")[0];
+        ccount.innerHTML = totalCredits + " credits";
+
+        var class_count = mercs[schedule].getElementsByClassName("class-count")[0];
+        var change_count = class_count.getElementsByClassName("num")[0];
+        change_count.innerHTML = totalClasses;
+
+        var major_count = mercs[schedule].getElementsByClassName("major-count")[0];
+        var major_change_count = major_count.getElementsByClassName("num")[0];
+        major_change_count.innerHTML = totalClasses - 2;
+
+        var other_count = mercs[schedule].getElementsByClassName("other-count")[0];
+        var other_change_count = other_count.getElementsByClassName("num")[0];
+        other_change_count.innerHTML = 2;
+       
+  }
+}
+
+  renderBottomList(){
+    
+    // var details = document.getElementsByTagName("tbody")[0];
+    // var newTR = document.createElement("tr");
+
+    // var course_num_td = document.createElement("td");
+    // course_num_td.innerHTML = cnum;
+    // var course_title_td = document.createElement("td");
+    // var course_instructor_td = document.createElement("td");
+    // var course_cred_td = document.createElement("td");
+  }
+  
+
+
   render() {
     return (
       <div className="Schedule">
@@ -23,6 +81,7 @@ class Schedule extends React.Component {
           
         </div>
       </div>
+      
     );
   }
 }

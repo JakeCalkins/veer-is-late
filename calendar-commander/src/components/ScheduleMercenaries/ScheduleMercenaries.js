@@ -6,6 +6,11 @@ import seminar from "./seminar.png"
 
 
 class Mercenaries extends React.Component {
+
+    mouseIn(){
+        
+    }
+
  render() {
     return (
       <div className = "Mercenaries">
@@ -22,23 +27,27 @@ class Mercenaries extends React.Component {
             <hr class="breaker"/>
             <div class="course-body">
                 <div class="course-icons">
-                    <img src={online}></img>
-                    <img src={study}></img>
-                    <img src={seminar}></img>
+                    <img alt="online"src={online}></img>
+                    <img alt="study"src={study}></img>
+                    <img alt="seminar"src={seminar}></img>
                 </div>
                 <div class="vl">
                 </div>
                 <div class="course-classes">
                     <ul class="col col1">
-                        <li>RIC 556</li>
-                        <li>CS 344</li>
-                        <li>PB 523</li>
+                        <li class="num1">RIC 556</li>
+                        <li class="num4">CS 344</li>
+                        <li class="num7">PB 523</li>
                     </ul>
                     <ul class="col col2">
-                        <li>CNA 321</li>
+                        <li class="num2">CNA 321</li>
+                        <li class="num5"></li>
+                        <li class="num8"></li>
                     </ul>
                     <ul class="col col3">
-                        <li>MS 203</li>
+                        <li class="num3">MS 203</li>
+                        <li class="num6"></li>
+                        <li class="num9"></li>
                     </ul>
                     </div>
             </div>

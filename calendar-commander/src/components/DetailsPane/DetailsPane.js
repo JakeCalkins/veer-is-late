@@ -11,7 +11,7 @@ class DetailsPane extends React.Component {
         monday: [
           {
             id: 1,
-            name: 'Custom Event 1',
+            name: 'COMPSCI121',
             type: 'custom',
             startTime: moment('2018-02-23T11:30:00'),
             endTime: moment('2018-02-23T13:30:00')
@@ -20,14 +20,14 @@ class DetailsPane extends React.Component {
         tuesday: [
           {
             id: 2,
-            name: 'Custom Event 2',
+            name: 'MS203',
             type: 'custom',
             startTime: moment('2018-02-22T12:30:00'),
             endTime: moment('2018-02-22T14:30:00')
           },
           {
             id: 3,
-            name: 'Custom Event 3',
+            name: 'PB523',
             type: 'custom',
             startTime: moment('2018-02-22T16:30:00'),
             endTime: moment('2018-02-22T18:45:00')
@@ -54,12 +54,15 @@ class DetailsPane extends React.Component {
 
                   <div id="course-list">
                       <table class="course-listings">
+                        <thead>
                         <tr>
                           <th id="detail-cnum"></th>
                           <th id="detail-ctitle"></th>
                           <th id="detail-cinstruct"></th>
                           <th id="detail-ccredit"></th>
                         </tr>
+                        </thead>
+                        <tbody>
                         <tr>
                           <td class="course-num">CS 101</td>
                           <td class="course-title">Introduction to Computer Science</td>
@@ -78,6 +81,7 @@ class DetailsPane extends React.Component {
                           <td class="course-instructor">Tim Richards</td>
                           <td class="course-credits">3 credits</td>
                         </tr>
+                        </tbody>
                       </table>
                   </div>
                 </div>

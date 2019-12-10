@@ -57,7 +57,8 @@ function getCredits(req, response) {
         }
     })
 
-    response.send()
+    response.json(jsonObj);
+    response.send();
 }
 
 module.exports = {

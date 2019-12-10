@@ -117,7 +117,7 @@ class RequirementsContainer extends React.Component {
     this.setState({honors: !this.state.honors})
     var m = document.getElementsByClassName("honors-selection")[0]
     m.value = this.state.honors;
-    if(this.state.honors){
+    if(!this.state.honors){
       m.style["background-color"] = "white"
     } else {
       m.style["background-color"] = "#881c1c";
@@ -128,7 +128,7 @@ class RequirementsContainer extends React.Component {
     this.setState({online: !this.state.online})
     var m = document.getElementsByClassName("online-selection")[0]
     m.value = this.state.online;
-    if(this.state.online){
+    if(!this.state.online){
       m.style["background-color"] = "white"
     } else {
       m.style["background-color"] = "#881c1c";
@@ -139,7 +139,7 @@ class RequirementsContainer extends React.Component {
     this.setState({seminar: !this.state.seminar})
     var m = document.getElementsByClassName("independent-selection")[0]
     m.value = this.state.seminar;
-    if(this.state.seminar){
+    if(!this.state.seminar){
       m.style["background-color"] = "white"
     } else {
       m.style["background-color"] = "#881c1c";
@@ -218,11 +218,11 @@ class RequirementsContainer extends React.Component {
             </div>
             <div class="input-opt">
                 <p class="days-text">Maximum number of in-major courses: </p>
-                <input id="course-class-input" type="text" placeholder="5"></input>
+                <input id="course-class-input" type="text" defaultValue="0" placeholder="5"></input>
             </div>
               <div class="input-opt">
                 <p class="seminar-text">How many seminars? </p>
-                <input id="seminar-class-input" type="text" placeholder="0"></input>
+                <input id="seminar-class-input" type="text" defaultValue="0" placeholder="0"></input>
               </div>
           </div>
           <div class="forthebutton">
@@ -258,9 +258,11 @@ class RequirementsContainer extends React.Component {
               xhr.send(); 
 
               // HTTP request to run the schedule builder
-              var xhr = new XMLHttpRequest();
-              xhr.open('GET', "http://localhost:1337/api/schedule", true);
-              xhr.send(); 
+
+              xhr.onload = function() {
+                console.log(`Loaded: ${xhr.status} ${xhr.response}`);
+              };
+
               updateView();
             //   var obj = {
             //     table: []

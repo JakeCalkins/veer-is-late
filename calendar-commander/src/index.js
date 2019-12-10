@@ -8,8 +8,6 @@ import ProgressContainer from "./components/progress_container/ProgressContainer
 import RequirementsContainer from "./components/requirements_container/RequirementContainers";
 import Schedule from "./components/schedule_generator/Schedule";
 import MenuItems from "./components/MenuItems/MenuItems";
-import Mercenaries from './components/ScheduleMercenaries/ScheduleMercenaries';
-import DetailsPane from './components/DetailsPane/DetailsPane';
 
 // ReactDOM.render(<div><NavBar /> <MenuItems/><Schedule /></div>, document.getElementById('root'));
  ReactDOM.render(<div><NavBar /> <StudentID/></div>, document.getElementById('root'));
@@ -25,7 +23,7 @@ let visibleView = (
 ); //default state
 
 let x = 2
-if(x != 1) {
+if(x !== 1) {
     visibleView = (
         <div>
             <NavBar />
@@ -36,7 +34,15 @@ if(x != 1) {
 
 let updateView = function() {
     x++;
-    if (x == 3) {
+    if( x=== 3){
+        visibleView = (
+            <div>
+                <NavBar />
+                <ProgressContainer />
+            </div>
+        )
+    }
+    if (x === 4) {
         visibleView = (
             <div>
                 <NavBar />
@@ -44,7 +50,7 @@ let updateView = function() {
             </div>
         );
     }
-    if (x == 4) {
+    if (x === 5) {
         visibleView = (
             <div>
                 <NavBar />

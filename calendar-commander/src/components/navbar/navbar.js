@@ -14,7 +14,7 @@ class NavBar extends React.Component {
               <h1>Calendar Commander</h1>
             </div>
             <div class="img">
-              <img class = "calendar" src={calendar_icon} />
+              <img class="calendar" alt="calendar" src={calendar_icon} />
             </div>
             <div id="spire-return">
               <img src={back_logo} alt="go back"/>
