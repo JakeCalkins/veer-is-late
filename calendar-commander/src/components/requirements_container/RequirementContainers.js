@@ -262,8 +262,6 @@ class RequirementsContainer extends React.Component {
               xhr.open('GET', "http://localhost:1337/api/schedule", true);
               xhr.send(); 
               updateView();
-
-              updateView();
             //   var obj = {
             //     table: []
             //  };
