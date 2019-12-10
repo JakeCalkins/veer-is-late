@@ -17,8 +17,8 @@ module.exports = function(app, express) {
             fs.readFile('generated_schedules.txt', 'utf8', function(err, data){
                     // console.log(data); //OK
                     data = JSON.parse(data);
-                    res.json(data);
-                    res.send();
+                    //res.json(data);
+                    //res.send();
             });
         });
     });

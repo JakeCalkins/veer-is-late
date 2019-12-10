@@ -179,7 +179,7 @@ function getARR(req, response) {
                                 }
                             })
 
-                            response.send()
+                            //response.send()
                         }
                     }
                 });
