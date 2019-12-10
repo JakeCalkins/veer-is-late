@@ -1,1 +1,23 @@
+<<<<<<< HEAD
 {"min_credits":"23","max_credits":"12","day_settings":{"days":["M","T","W","TH","F"],"mode":"before","time":"12:30"},"honors_class":"true","online_class":"false","independent_class":"true","in_major_count":"0","seminar_class":"0"}
+=======
+{
+    "max_credits": 24,
+    "min_credits": 12,
+    "day_settings": {
+        "days": [
+            "M",
+            "T",
+            "W",
+            "TH",
+            "F"
+        ],
+        "mode": "before",
+        "time": "12:30"
+    },
+    "honors_class": 0,
+    "online_class": 0,
+    "seminar_class": 0,
+    "in_major_count": 3
+}
+>>>>>>> 0ddd3df7e1eec01f04ffa4c26e77b6407e5b40db

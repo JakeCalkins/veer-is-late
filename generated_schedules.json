@@ -1,0 +1,290 @@
+{
+    "0": {
+        "0": {
+            "cnum": "121",
+            "cname": "Intro Problem Solving W/Comp",
+            "credits": 4,
+            "pid": 4,
+            "lid": 100,
+            "honors": false,
+            "location": "TBD",
+            "gened": "R2",
+            "major": "COMPSCI",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 5:30PM 6:45PM",
+            "type": "LEC"
+        },
+        "1": {
+            "cnum": "121",
+            "major": "COMPSCI",
+            "cname": "Intro Problem Solving W/Comp",
+            "time_of_day": "F 12:20PM 1:10PM",
+            "type": "LAB",
+            "lid": 100
+        },
+        "2": {
+            "cnum": "121",
+            "cname": "World Politics",
+            "credits": 4,
+            "pid": 1649,
+            "lid": 256,
+            "honors": false,
+            "location": "TBD",
+            "gened": "SB,DG",
+            "major": "POLISCI",
+            "prereqs": "TBD",
+            "time_of_day": "M W 2:30PM 3:45PM",
+            "type": "LEC"
+        },
+        "3": {
+            "cnum": "121",
+            "major": "POLISCI",
+            "cname": "World Politics",
+            "time_of_day": "F 9:05AM 9:55AM",
+            "type": "DIS",
+            "lid": 256
+        },
+        "4": {
+            "cnum": "131",
+            "cname": "Brave New World",
+            "credits": 3,
+            "pid": 643,
+            "lid": null,
+            "honors": false,
+            "location": "TBD",
+            "gened": "AL,DG",
+            "major": "COMP-LIT",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 1:00PM 2:15PM",
+            "type": "LEC"
+        },
+        "5": {
+            "cnum": "132",
+            "cname": "Gender, Sexuality, Lit & Cultr",
+            "credits": 3,
+            "pid": 1499,
+            "lid": null,
+            "honors": false,
+            "location": "TBD",
+            "gened": "AL,DG",
+            "major": "ENGLISH",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 10:00AM 11:15AM",
+            "type": "LEC"
+        }
+    },
+    "1": {
+        "0": {
+            "cnum": "121",
+            "cname": "Intro Problem Solving W/Comp",
+            "credits": 4,
+            "pid": 4,
+            "lid": 100,
+            "honors": false,
+            "location": "TBD",
+            "gened": "R2",
+            "major": "COMPSCI",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 5:30PM 6:45PM",
+            "type": "LEC"
+        },
+        "1": {
+            "cnum": "121",
+            "major": "COMPSCI",
+            "cname": "Intro Problem Solving W/Comp",
+            "time_of_day": "F 12:20PM 1:10PM",
+            "type": "LAB",
+            "lid": 100
+        },
+        "2": {
+            "cnum": "100",
+            "cname": "Theatrical Frontiers:Live Perf",
+            "credits": 3,
+            "pid": 445,
+            "lid": null,
+            "honors": false,
+            "location": "TBD",
+            "gened": "AT",
+            "major": "THEATER",
+            "prereqs": "TBD",
+            "time_of_day": "M W 2:30PM 3:45PM",
+            "type": "LEC"
+        },
+        "3": {
+            "cnum": "118",
+            "cname": "History/Architecture&BuiltEnvr",
+            "credits": 3,
+            "pid": 944,
+            "lid": null,
+            "honors": false,
+            "location": "TBD",
+            "gened": "AT,DG",
+            "major": "ART-HIST",
+            "prereqs": "TBD",
+            "time_of_day": "M W F 10:10AM 11:00AM",
+            "type": "LEC"
+        },
+        "4": {
+            "cnum": "104",
+            "cname": "Basic Studio/Drawing",
+            "credits": 3,
+            "pid": null,
+            "lid": null,
+            "honors": false,
+            "location": "TBD",
+            "gened": "AT",
+            "major": "ART",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 7:00PM 9:45PM",
+            "type": "STS"
+        }
+    },
+    "2": {
+        "0": {
+            "cnum": "121",
+            "cname": "Intro Problem Solving W/Comp",
+            "credits": 4,
+            "pid": 4,
+            "lid": 100,
+            "honors": false,
+            "location": "TBD",
+            "gened": "R2",
+            "major": "COMPSCI",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 5:30PM 6:45PM",
+            "type": "LEC"
+        },
+        "1": {
+            "cnum": "121",
+            "major": "COMPSCI",
+            "cname": "Intro Problem Solving W/Comp",
+            "time_of_day": "F 12:20PM 1:10PM",
+            "type": "LAB",
+            "lid": 100
+        },
+        "2": {
+            "cnum": "190A",
+            "cname": "Greeks, Romans, and Others",
+            "credits": 3,
+            "pid": 514,
+            "lid": null,
+            "honors": false,
+            "location": "TBD",
+            "gened": "HS,DG",
+            "major": "CLASSICS",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 10:00AM 11:15AM",
+            "type": "LEC"
+        },
+        "3": {
+            "cnum": "140",
+            "cname": "European History 1500-1815",
+            "credits": 3,
+            "pid": 528,
+            "lid": null,
+            "honors": false,
+            "location": "TBD",
+            "gened": "HS",
+            "major": "HISTORY",
+            "prereqs": "TBD",
+            "time_of_day": "M W F 9:05AM 9:55AM",
+            "type": "LEC"
+        },
+        "4": {
+            "cnum": "133",
+            "cname": "African-Amer Hist,Cv War-1954",
+            "credits": 4,
+            "pid": 542,
+            "lid": 8,
+            "honors": false,
+            "location": "TBD",
+            "gened": "HS,DU",
+            "major": "AFROAM",
+            "prereqs": "TBD",
+            "time_of_day": "M W 2:30PM 3:45PM",
+            "type": "LEC"
+        },
+        "5": {
+            "cnum": "133",
+            "major": "AFROAM",
+            "cname": "African-Amer Hist,Cv War-1954",
+            "time_of_day": "F 1:25PM 2:15PM",
+            "type": "DIS",
+            "lid": 8
+        }
+    },
+    "3": {
+        "0": {
+            "cnum": "121",
+            "cname": "Intro Problem Solving W/Comp",
+            "credits": 4,
+            "pid": 4,
+            "lid": 100,
+            "honors": false,
+            "location": "TBD",
+            "gened": "R2",
+            "major": "COMPSCI",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 5:30PM 6:45PM",
+            "type": "LEC"
+        },
+        "1": {
+            "cnum": "121",
+            "major": "COMPSCI",
+            "cname": "Intro Problem Solving W/Comp",
+            "time_of_day": "F 12:20PM 1:10PM",
+            "type": "LAB",
+            "lid": 100
+        },
+        "2": {
+            "cnum": "170",
+            "cname": "Grassroot Exp Amer Lfe & Cul I",
+            "credits": 3,
+            "pid": 1558,
+            "lid": null,
+            "honors": false,
+            "location": "TBD",
+            "gened": "HS,DU",
+            "major": "AFROAM",
+            "prereqs": "TBD",
+            "time_of_day": "TU TH 10:00AM 11:15AM",
+            "type": "LEC"
+        },
+        "3": {
+            "cnum": "170H",
+            "cname": "IndigenousPeoplesNAmerica hons",
+            "credits": 3,
+            "pid": 485,
+            "lid": null,
+            "honors": true,
+            "location": "TBD",
+            "gened": "HS,DU",
+            "major": "HISTORY",
+            "prereqs": "TBD",
+            "time_of_day": "M W 4:00PM 5:15PM",
+            "type": "LEC"
+        },
+        "4": {
+            "cnum": "133",
+            "cname": "African-Amer Hist,Cv War-1954",
+            "credits": 4,
+            "pid": 542,
+            "lid": 8,
+            "honors": false,
+            "location": "TBD",
+            "gened": "HS,DU",
+            "major": "AFROAM",
+            "prereqs": "TBD",
+            "time_of_day": "M W 2:30PM 3:45PM",
+            "type": "LEC"
+        },
+        "5": {
+            "cnum": "133",
+            "major": "AFROAM",
+            "cname": "African-Amer Hist,Cv War-1954",
+            "time_of_day": "F 1:25PM 2:15PM",
+            "type": "DIS",
+            "lid": 8
+        }
+    }
+}
