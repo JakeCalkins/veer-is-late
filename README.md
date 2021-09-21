@@ -1,7 +1,12 @@
-## Calendar Commander
-Calendar Commander is a web application that will remove the frustration and confusion associated with creating a working schedule based on UMass Academic Requirements. The goal is to break down the ARR into a simplistic manner which simply generates suitable schedules for students that will help them graduate and understand what is required of them. Students at UMass are welcome to use this application, as it will provide a clear outline of valid next-semester schedules.
 
-Currently, this application pulls from a publicly avaliable list of courses offered at the University of Massachusetts Amherst into the database. The application is free to make GET and POST requests to the database to retrieve and update information respectively, with the end goal being to generated an optimal schedule based on the parameters any student enters. This takes the old _Spire_ system that is highly outdated and mundane with a clean approach to schedule generation.
+Welcome to **Calendar Commander**, a compact application that provides a cleaner way to handle *schedule generation*  in React. It’s primarily focus at assisting schedule generation for University students, but can also be embedded in any existing scheduling software that needs a calendar generator. It's essentially a cleaner way to break down the ARR into a manner which simply generates suitable schedules for students .
+
+
+## Features
+
+- [X] Modern, light-weight API for reading, generating and adding schedules for students.
+- [X] Unified, simple `user configuration` customization.
+- [X] Easily construct various calenders allowing for a multitude of options.
 
 
 ## Topics
