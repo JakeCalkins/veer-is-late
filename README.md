@@ -10,3 +10,10 @@ Calendar Commander is a web application that will remove the frustration and con
 ## Topics
  1. Data Storage - ElephantSQL to manage course/academic requirements                    and schedules for students
  2. Server-Side - Express and calculations of schedules will be done                    on the server and sent to the client
+ 3. Front-End  - We are using a React Framework to create the UI
+
+
+![Generated Screenshot](./images/GeneratedCalendar.png)
+
+
+
