@@ -1,7 +1,7 @@
 ## Authors
+ - [Veer Singh](./team/VEER_SINGH.md)
  - [Jacob Calkins](./team/JACOB_CALKINS.md)
  - [Matthew Gimlewicz](./team/MATTHEW_GIMLEWICZ.md)
- - [Veer Singh](./team/VEER_SINGH.md)
  - [Mark Dow](./team/MARK_DOW.md)
 
 ## Calendar Commander
