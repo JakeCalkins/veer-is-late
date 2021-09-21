@@ -1,6 +1,3 @@
-# veer-is-late
-for cs326 - webProg
-
 ## Authors
  - [Jacob Calkins](./team/JACOB_CALKINS.md)
  - [Matthew Gimlewicz](./team/MATTHEW_GIMLEWICZ.md)
