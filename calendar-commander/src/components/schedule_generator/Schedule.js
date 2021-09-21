@@ -50,18 +50,6 @@ class Schedule extends React.Component {
   }
 }
 
-  renderBottomList(){
-    
-    // var details = document.getElementsByTagName("tbody")[0];
-    // var newTR = document.createElement("tr");
-
-    // var course_num_td = document.createElement("td");
-    // course_num_td.innerHTML = cnum;
-    // var course_title_td = document.createElement("td");
-    // var course_instructor_td = document.createElement("td");
-    // var course_cred_td = document.createElement("td");
-  }
-  
 
 
   render() {
