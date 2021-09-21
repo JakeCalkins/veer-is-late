@@ -13,7 +13,7 @@ Welcome to **Calendar Commander**, a compact application that provides a cleaner
 **`npm`** comes bundled with [**`node`**](https://nodejs.org/), & most third-party distributions, by default. Officially supported downloads/distributions can be found at: [nodejs.org/en/download](https://nodejs.org/en/download)
 
 To install, run 
-```npm install``` on the source directory.
+```npm install``` on the source directory. Start the application with ```npm start```
 
 
 ## Features
