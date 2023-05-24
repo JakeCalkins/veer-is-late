@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import NavBar from "./components/navbar/NavBar";
+import NavBar from "./components/navbar/navbar";
 import StudentID from "./components/student_id_container/StudentID";
 import ProgressContainer from "./components/progress_container/ProgressContainer";
 import RequirementsContainer from "./components/requirements_container/RequirementContainers";

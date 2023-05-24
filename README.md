@@ -1,15 +1,41 @@
-# veer-is-late
-for cs326 - webProg
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/npm/cli/Node%20CI/latest)](https://github.com/npm/cli/actions?query=workflow%3A%22Node+CI%22+branch%3Alatest) [![Coveralls github branch](https://img.shields.io/coveralls/github/npm/cli/latest)](https://coveralls.io/github/npm/cli?branch=latest)
 
-## Authors
- - [Jacob Calkins](./team/JACOB_CALKINS.md)
- - [Matthew Gimlewicz](./team/MATTHEW_GIMLEWICZ.md)
- - [Veer Singh](./team/VEER_SINGH.md)
- - [Mark Dow](./team/MARK_DOW.md)
+# Calendar Commander - a Student ARR Generator
 
-## Calendar Commander
-Calendar Commander is a web application that will remove the frustration and confusion associated with creating a working schedule based on UMass Academic Requirements. The goal is to break down the ARR into a simplistic manner which simply generates suitable schedules for students that will help them graduate and understand what is required of them. Students at UMass are welcome to use this application, as it will provide a clear outline of valid next-semester schedules.
+Welcome to **Calendar Commander**, a compact application that provides a cleaner way to handle *schedule generation*  in React. It’s primarily focus at assisting schedule generation for University students, but can also be embedded in any existing scheduling software that needs a calendar generator. It's essentially a cleaner way to break down the ARR into a manner which simply generates suitable schedules for students .
+
+### Requirements
+
+* [**React.js** `16.0`](https://reactjs.org/) or higher must be installed to run this program
+
+### Installation
+
+**`npm`** comes bundled with [**`node`**](https://nodejs.org/), & most third-party distributions, by default. Officially supported downloads/distributions can be found at: [nodejs.org/en/download](https://nodejs.org/en/download)
+
+To install, run 
+```npm install``` on the source directory. Start the application with ```npm start```
+
+
+## Features
+
+- [X] Modern, light-weight API for reading, generating and adding schedules for students.
+- [X] Unified, simple `user configuration` customization.
+- [X] Easily construct various calenders allowing for a multitude of options.
+
 
 ## Topics
  1. Data Storage - ElephantSQL to manage course/academic requirements                    and schedules for students
  2. Server-Side - Express and calculations of schedules will be done                    on the server and sent to the client
+ 3. Front-End  - We are using a React Framework to create the UI
+
+![InputScreen](./images/StudentID.png)
+![PreferencePane](./images/PreferencePane.png)
+![Generated Screenshot](./images/GeneratedCalendar.png)
+
+
+## Authors
+ - [Veer Singh](./team/VEER_SINGH.md)
+ - [Jacob Calkins](./team/JACOB_CALKINS.md)
+ - [Matthew Gimlewicz](./team/MATTHEW_GIMLEWICZ.md)
+ - [Mark Dow](./team/MARK_DOW.md)
+

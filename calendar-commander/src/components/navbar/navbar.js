@@ -1,5 +1,5 @@
 import React from 'react';
-import './NavBar.css';
+import './navbar.css';
 import calendar_icon from './calendar.png';
 import back_logo from './backLogo.png';
 import saved_icon from './savedIcon.png';
